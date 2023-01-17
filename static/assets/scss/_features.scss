@@ -1,0 +1,262 @@
+
+/*=========================
+    05. Features CSS
+==========================*/
+
+/* Features Wrapper one*/ 
+
+.features-wrapper-one{
+    position: relative;
+    z-index: 1;
+    margin-top: -110px;
+    background-color: $white;
+    & .features-img{
+        margin-right: 70px;
+        z-index: 1;
+        position: relative;
+        &:after{
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            content: '';
+            width: 180px;
+            height: 180px;
+            background-color: $secondary-color;
+            z-index: -1;
+        }
+        @media #{$xm}{
+            margin-bottom: 60px;
+        }
+    }
+}
+.features-content-box-one{
+    & h5{
+        margin-bottom: 35px;
+        color: $primary-color;
+        font-weight: 500;
+    }
+}
+.features-list-one{
+    & .list-item{
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+        & .icon{
+            position: relative;
+            min-width: 60px;
+            max-width: 60px;
+            height: 60px;
+            @extend %bg-hover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+            margin-top: 5px;
+            border-radius: 3px;
+            &:before{
+                position: absolute;
+                top: -6px;
+                left: -6px;
+                content: '';
+                width: 60px;
+                height: 60px;
+                border: 1px solid $primary-color;
+                border-radius: 3px;
+            }
+            & i{
+                line-height: 1;
+                @extend %white;
+                font-size: 40px;
+            }
+        }
+        & .content{
+            & h5{
+                margin-bottom: 10px;
+            }
+            & p{
+                color: var(--text-color);
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+/* Features Wrapper Two*/ 
+.features-wrapper-two{
+    position: relative;
+    z-index: 1;
+    &:after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(22, 22, 31, 0.9);
+        z-index: -1;
+    }
+}
+/* Features Wrapper Three*/ 
+.features-wrapper-three{
+    position: relative;
+    z-index: 1;
+    &:after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 500px;
+        background-color: $light-bg;
+        z-index: -1;
+    }
+}
+
+/* Features Wrapper Four*/ 
+.features-wrapper-four{
+    & .features-img{
+        margin-right: 70px;
+        z-index: 1;
+        position: relative;
+        &:after{
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            content: '';
+            width: 180px;
+            height: 180px;
+            background-color: $secondary-color;
+            z-index: -1;
+        }
+        @media #{$xm}{
+            margin-bottom: 60px;
+        }
+    }
+}
+
+/* Features Item One*/ 
+.features-item-one{
+    background-color: $white;
+    text-align: center;
+    padding: 60px 30px 55px;
+    & .icon{
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f7f7f7;
+        border-radius: 50%;
+        margin: auto;
+        margin-bottom: 31px;
+        & i{
+            @extend %primary;
+            font-size: 60px;
+        }
+    }
+    & .content{
+        & h4{
+            margin-bottom: 15px;
+        }
+    }
+}
+
+/* Features Item Two*/ 
+.features-item-two{
+    background-color: $white;
+    padding: 40px 30px 32px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px 0px rgba(36, 37, 51, 0.03);
+    & .icon{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 90px;
+        border: 1px solid $border;
+        margin-bottom: 25px;
+        & i{
+            font-size: 50px;
+            line-height: 1;
+            @extend %primary;
+        }
+    }
+    & .content{
+        & h3.title{
+            margin-bottom: 20px;
+        }
+        & p{
+            margin-bottom: 25px;
+        }
+    }
+}
+
+/* Icon Box CSS */
+.icon-box-one{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    & .icon{
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $border;
+        border-radius: 50%;
+        margin-right: 20px;
+        & i{
+            @extend %primary;
+        }
+    }
+}
+
+/* Work Process CSS */
+
+.work-process-wrapper{
+    & .single-process-step{
+        padding-bottom: 120px;
+        &:nth-child(even){
+            flex-direction: row-reverse;
+        }
+        & .process-content-box{
+            display: flex;
+            align-items: flex-start;
+            @media #{$xm}{
+                margin-bottom: 40px;
+                flex-direction: column;
+            }
+            & .step-count{
+                font-size:48px;
+                font-family: $quicksand;
+                font-weight: 700;
+                @extend %primary;
+                margin-right: 20px;
+                @media #{$xm}{
+                    margin-bottom: 40px;
+                }
+            }
+            & .content{
+                & span.line{
+                    display: block;
+                    width: 200px;
+                    height: 1px;
+                    margin-bottom: 45px;
+                    background-color: $heading-color;
+                }
+                & h3{
+                    font-size: 36px;
+                    line-height: 45px;
+                    margin-bottom: 23px;
+                }
+                & p{
+                    margin-bottom: 38px;
+                }
+            }
+        }
+    }
+}

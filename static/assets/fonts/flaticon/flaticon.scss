@@ -1,0 +1,133 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?c3403cc32e830a2f0a4b0c3103e5c078") format("truetype"),
+url("./flaticon.woff?c3403cc32e830a2f0a4b0c3103e5c078") format("woff"),
+url("./flaticon.woff2?c3403cc32e830a2f0a4b0c3103e5c078") format("woff2"),
+url("./flaticon.eot?c3403cc32e830a2f0a4b0c3103e5c078#iefix") format("embedded-opentype"),
+url("./flaticon.svg?c3403cc32e830a2f0a4b0c3103e5c078#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "government": "\f101",
+    "game-controller": "\f102",
+    "serving-dish": "\f103",
+    "suitcase": "\f104",
+    "dumbbell": "\f105",
+    "gift-box": "\f106",
+    "chef": "\f107",
+    "shopping": "\f108",
+    "place": "\f109",
+    "find": "\f10a",
+    "social-care": "\f10b",
+    "email": "\f10c",
+    "color-palette": "\f10d",
+    "museum": "\f10e",
+    "balloons": "\f10f",
+    "gamepad": "\f110",
+    "add-user": "\f111",
+    "laptop": "\f112",
+    "headphone": "\f113",
+    "email-1": "\f114",
+    "play-button": "\f115",
+    "map": "\f116",
+    "star": "\f117",
+    "calendar": "\f118",
+    "star-1": "\f119",
+    "right-arrow": "\f11a",
+    "avatar": "\f11b",
+);
+
+.flaticon-government:before {
+    content: map-get($flaticon-map, "government");
+}
+.flaticon-game-controller:before {
+    content: map-get($flaticon-map, "game-controller");
+}
+.flaticon-serving-dish:before {
+    content: map-get($flaticon-map, "serving-dish");
+}
+.flaticon-suitcase:before {
+    content: map-get($flaticon-map, "suitcase");
+}
+.flaticon-dumbbell:before {
+    content: map-get($flaticon-map, "dumbbell");
+}
+.flaticon-gift-box:before {
+    content: map-get($flaticon-map, "gift-box");
+}
+.flaticon-chef:before {
+    content: map-get($flaticon-map, "chef");
+}
+.flaticon-shopping:before {
+    content: map-get($flaticon-map, "shopping");
+}
+.flaticon-place:before {
+    content: map-get($flaticon-map, "place");
+}
+.flaticon-find:before {
+    content: map-get($flaticon-map, "find");
+}
+.flaticon-social-care:before {
+    content: map-get($flaticon-map, "social-care");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
+}
+.flaticon-color-palette:before {
+    content: map-get($flaticon-map, "color-palette");
+}
+.flaticon-museum:before {
+    content: map-get($flaticon-map, "museum");
+}
+.flaticon-balloons:before {
+    content: map-get($flaticon-map, "balloons");
+}
+.flaticon-gamepad:before {
+    content: map-get($flaticon-map, "gamepad");
+}
+.flaticon-add-user:before {
+    content: map-get($flaticon-map, "add-user");
+}
+.flaticon-laptop:before {
+    content: map-get($flaticon-map, "laptop");
+}
+.flaticon-headphone:before {
+    content: map-get($flaticon-map, "headphone");
+}
+.flaticon-email-1:before {
+    content: map-get($flaticon-map, "email-1");
+}
+.flaticon-play-button:before {
+    content: map-get($flaticon-map, "play-button");
+}
+.flaticon-map:before {
+    content: map-get($flaticon-map, "map");
+}
+.flaticon-star:before {
+    content: map-get($flaticon-map, "star");
+}
+.flaticon-calendar:before {
+    content: map-get($flaticon-map, "calendar");
+}
+.flaticon-star-1:before {
+    content: map-get($flaticon-map, "star-1");
+}
+.flaticon-right-arrow:before {
+    content: map-get($flaticon-map, "right-arrow");
+}
+.flaticon-avatar:before {
+    content: map-get($flaticon-map, "avatar");
+}

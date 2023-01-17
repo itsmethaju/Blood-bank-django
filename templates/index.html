@@ -1,0 +1,375 @@
+{%block content%}
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Montero | One Page Parallax HTML5 Template</title>
+	<!-- include the site stylesheet -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/fancybox.css' %}">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+{% load widget_tweaks %}
+<br>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+input{
+    color:#022255 !important;
+}
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus{
+    box-shadow: 0 0 5px rgba(246, 8, 110,0.8);
+    border: 1px solid rgba(246, 8, 110,0.8);
+}
+
+.form-horizontal {
+    width: 320px;
+    background-color: #ffffff;
+    padding: 25px 38px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+.control-label {
+    text-align: left !important;
+    padding-bottom: 4px;
+}
+.progress {
+    height: 3px !important;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.show-pass{
+    position: absolute;
+    top:5%;
+    right: 8%;
+}
+.progress-bar-danger {
+    background-color: #e90f10;
+}
+.progress-bar-warning{
+    background-color: #ffad00;
+}
+.progress-bar-success{
+    background-color: #02b502;
+}
+
+
+.fa-eye{
+    color: #022255;
+    cursor: pointer;
+}
+.ex-account p a{
+    color: #f6086e;
+    text-decoration: underline;
+}
+.fa-circle{
+    font-size: 6px;  
+}
+.fa-check{
+    color: #02b502;
+}
+
+</style>
+      <h3><i style="font-weight: bold;">SignUp</i></h3>
+<br>
+<br>
+
+
+<div class="container">
+
+   {% if messages %}
+  <div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}" role="alert">
+          <p style="color:red">{{ message }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+{% endif %}
+  <form method="post" enctype="multipart/form-data" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}" novalidate>
+        {% csrf_token %}
+<div class="row mt-1">
+     <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">First Name</i></label>
+            {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+    </div>
+
+
+   <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Last Name</i></label>
+             {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+    </div>
+
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">User Name</i></label>
+           {% render_field userForm.username class="form-control" placeholder="Username" %}
+    </div>
+
+
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID</i></label>
+         {% render_field userForm.email class="form-control" placeholder="Email" %}
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Contact Number</i></label>
+<input type="number" name="phone" maxlength="10" placeholder="Mobile" class="form-control" required="" id="id_phone">    </div>
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">State</i></label>
+         {% render_field doctorForm.country required="required" class="form-control" placeholder="State" %}
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">City</i></label>
+        {% render_field doctorForm.city required="required" class="form-control" placeholder="City" %}
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Vanue</i></label>
+         {% render_field doctorForm.vanue required="required" class="form-control" placeholder="Vanue" %}
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Area</i></label>
+        {% render_field doctorForm.area required="required" class="form-control" placeholder="Area" %}
+    </div>
+</div>
+
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Address</i></label>
+        <input name="address"  maxlength="500" placeholder="Address" class="form-control" required="" id="id_address"placeholder="Address">
+    </div>
+
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        {% render_field doctorForm.blood_group required="required" class="form-control" placeholder="Blood Group" %}
+
+    </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Date Of Birth</i></label>
+<input type="date" name="date_of_birth" maxlength="100" placeholder="Date Of Birth" class="form-control" required="" id="id_date_of_birth">
+  </div>
+   <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Genden</i></label>
+                         <select name="gender" maxlength="10" placeholder="Gender" class="form-control" required="" id="id_gender">
+              <option value="Male" selected="">Male</option>
+            
+              <option value="FeMale">FeMale</option>
+            
+              <option value="Other">Other</option>
+         
+
+            
+            </select> 
+        </div>
+   <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Profile Picture</i></label>
+              {% render_field doctorForm.image required="required" class="form-control" placeholder="Profile Picture" %}
+        </div>
+   <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Password</i></label>
+               {% render_field userForm.password class="form-control" placeholder="Password" %}
+     <span class="show-pass" onclick="toggle()">
+                            <i class="far fa-eye" onclick="myFunction(this)"></i>
+                        </span>
+               <div id="popover-password">
+                            <p><span id="result"></span></p>
+                            <div class="progress">
+                                <div id="password-strength" 
+                                    class="progress-bar" 
+                                    role="progressbar" 
+                                    aria-valuenow="40" 
+                                    aria-valuemin="0" 
+                                    aria-valuemax="100" 
+                                    style="width:0%">
+                                </div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="">
+                                    <span class="low-upper-case">
+                                        <i class="fas fa-circle" aria-hidden="true"></i>
+                                        &nbsp;Lowercase &amp; Uppercase
+                                    </span>
+                                </li>
+                                <li class="">
+                                    <span class="one-number">
+                                        <i class="fas fa-circle" aria-hidden="true"></i>
+                                        &nbsp;Number (0-9)
+                                    </span> 
+                                </li>
+                                <li class="">
+                                    <span class="one-special-char">
+                                        <i class="fas fa-circle" aria-hidden="true"></i>
+                                        &nbsp;Special Character (!@#$%^&*)
+                                    </span>
+                                </li>
+                                <li class="">
+                                    <span class="eight-character">
+                                        <i class="fas fa-circle" aria-hidden="true"></i>
+                                        &nbsp;Atleast 8 Character
+                                    </span>
+                                </li>
+                            </ul>
+        </div>
+   </div>
+      <div class="form-group col-md-6">
+      <label><i style="font-weight: bold;">confirm_password</i></label>
+      <input type="Password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirm_password" required>
+            
+                        </div>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_country").change(function () {
+      var url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+      var countryId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_cities' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'country': countryId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+    // this one is for fetching vanue data
+    $("#id_city").change(function () { //django-model-form created this id
+      var url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+      var cityId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_vanues' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/) person_form.html template has this url var
+        data: {
+          'city': cityId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_vanue").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+    //this one is for fetching area data
+    // this one is for fetching vanue data
+ 
+
+
+let state = false;
+let password = document.getElementById("id_password");
+let passwordStrength = document.getElementById("password-strength");
+let lowUpperCase = document.querySelector(".low-upper-case i");
+let number = document.querySelector(".one-number i");
+let specialChar = document.querySelector(".one-special-char i");
+let eightChar = document.querySelector(".eight-character i");
+
+password.addEventListener("keyup", function(){
+    let pass = document.getElementById("id_password").value;
+    checkStrength(pass);
+});
+
+function toggle(){
+    if(state){
+        document.getElementById("id_password").setAttribute("type","password");
+        state = false;
+    }else{
+        document.getElementById("id_password").setAttribute("type","text")
+        state = true;
+    }
+}
+
+function myFunction(show){
+    show.classList.toggle("fa-eye-slash");
+}
+
+function checkStrength(password) {
+    let strength = 0;
+
+    //If password contains both lower and uppercase characters
+    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+        strength += 1;
+        lowUpperCase.classList.remove('fa-circle');
+        lowUpperCase.classList.add('fa-check');
+    } else {
+        lowUpperCase.classList.add('fa-circle');
+        lowUpperCase.classList.remove('fa-check');
+    }
+    //If it has numbers and characters
+    if (password.match(/([0-9])/)) {
+        strength += 1;
+        number.classList.remove('fa-circle');
+        number.classList.add('fa-check');
+    } else {
+        number.classList.add('fa-circle');
+        number.classList.remove('fa-check');
+    }
+    //If it has one special character
+    if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+        strength += 1;
+        specialChar.classList.remove('fa-circle');
+        specialChar.classList.add('fa-check');
+    } else {
+        specialChar.classList.add('fa-circle');
+        specialChar.classList.remove('fa-check');
+    }
+    //If password is greater than 7
+    if (password.length > 7) {
+        strength += 1;
+        eightChar.classList.remove('fa-circle');
+        eightChar.classList.add('fa-check');
+    } else {
+        eightChar.classList.add('fa-circle');
+        eightChar.classList.remove('fa-check');   
+    }
+
+    // If value is less than 2
+    if (strength < 2) {
+        passwordStrength.classList.remove('progress-bar-warning');
+        passwordStrength.classList.remove('progress-bar-success');
+        passwordStrength.classList.add('progress-bar-danger');
+        passwordStrength.style = 'width: 10%';
+    } else if (strength == 3) {
+        passwordStrength.classList.remove('progress-bar-success');
+        passwordStrength.classList.remove('progress-bar-danger');
+        passwordStrength.classList.add('progress-bar-warning');
+        passwordStrength.style = 'width: 60%';
+    } else if (strength == 4) {
+        passwordStrength.classList.remove('progress-bar-warning');
+        passwordStrength.classList.remove('progress-bar-danger');
+        passwordStrength.classList.add('progress-bar-success');
+        passwordStrength.style = 'width: 100%';
+    }
+}
+                   
+
+  </script>
+{% endblock %}

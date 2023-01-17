@@ -1,0 +1,159 @@
+/*------------------------------------------------------------------
+48. pageFooter / .pageFooter
+-------------------------------------------------------------------*/
+.pageFooter{
+	z-index: 1;
+	min-height: 440px;
+	background-color: rgba($primary, 0.05);
+	@include media-breakpoint-up(md){
+		min-height: 500px;
+	}
+	@include media-breakpoint-up(lg){
+		min-height: 550px;
+	}
+	@include media-breakpoint-up(xl){
+		min-height: 627px;
+	}
+}
+.pageFooter{
+	a{
+		color: $gray-400;
+		transition: color 0.35s ease;
+		&:hover{
+			color: $primary;
+		}
+	}
+	.txtWrap{
+		@include media-breakpoint-only(md){
+			line-height: 22px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+49. circleGradient / .circleGradient
+-------------------------------------------------------------------*/
+.circleGradient{
+	@include size(250px);
+	background: linear-gradient(to bottom, rgba(252, 77, 74, 0.3) 10%,
+	rgba(255, 255, 255, 0) 55%);
+	z-index: -1;
+	@include media-breakpoint-up(lg){
+		@include size(320px);
+	}
+	@include media-breakpoint-up(xl){
+		@include size(403px);
+	}
+	&[data-circle="circleI"]{
+		transform: rotate(28deg);
+		top: 484px;
+		right: -90px;
+		background: linear-gradient(to bottom, rgba(252, 77, 74, 0.3) 0%,
+		rgba(255, 255, 255, 0) 70%);
+		@include media-breakpoint-up(sm){
+			transform: rotate(21deg);
+			top: 175px;
+			right: -100px;
+		}
+		@include media-breakpoint-up(md){
+			top: 135px;
+		}
+		@include media-breakpoint-up(xl){
+			right: -41px;
+		}
+	}
+	&[data-circle="circleII"]{
+		background: linear-gradient(to bottom, rgba(252, 77, 74, 0.3) 0%,
+		rgba(255, 255, 255, 0) 70%);
+		top: 300px;
+		right: -100px;
+		transform: rotate(-40deg);
+		@include media-breakpoint-up(sm){
+			top: 90px;
+			right: 20px;
+			transform: rotate(40deg);
+		}
+		@include media-breakpoint-up(md){
+			top: 100px;
+		}
+		@include media-breakpoint-up(lg){
+			right: 80px;
+		}
+		@include media-breakpoint-up(xl){
+			top: 70px;
+			right: 140px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+50. ovelGradient / .ovelGradient
+-------------------------------------------------------------------*/
+.ovelGradient{
+	top: 0;
+	left: 0;
+	z-index: -1;
+	@include size(165px, 309px);
+	@include media-breakpoint-up(lg){
+		@include size(215px, 403px);
+	}
+	@include media-breakpoint-up(xl){
+		@include size(255px, 478px);
+	}
+}
+/*------------------------------------------------------------------
+51. fLogo / .fLogo
+-------------------------------------------------------------------*/
+.fLogo{
+	max-width: 51px;
+}
+/*------------------------------------------------------------------
+52. fLink / .fLink
+-------------------------------------------------------------------*/
+.fLink{
+	line-height: 18px;
+	li{
+		margin-bottom: 15px;
+		@include media-breakpoint-up(lg){
+			margin-bottom: 18px;
+		}
+	}
+	@include media-breakpoint-only(md){
+		font-size: 14px;
+	}
+}
+/*------------------------------------------------------------------
+53. socialNetworks / .socialNetworks
+-------------------------------------------------------------------*/
+.socialNetworks{
+	font-size: 14px;
+	line-height: 16px;
+	margin-left: -12px;
+	margin-right: -12px;
+	@include media-breakpoint-up(lg){
+		margin-left: -16px;
+		margin-right: -16px;
+	}
+	li{
+		padding-left: 12px;
+		padding-right: 12px;
+		margin-bottom: 5px;
+		@include media-breakpoint-up(lg){
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+54. footerArea / .footerArea
+-------------------------------------------------------------------*/
+.footerArea{
+	a{
+		color: $primary;
+		transition: color 0.35s ease;
+		&:hover{
+			color: $gray-800;
+		}
+	}
+	p{
+		margin-bottom: 0;
+	}
+}

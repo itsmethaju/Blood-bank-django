@@ -1,0 +1,44 @@
+
+/*=========================
+    11. Tean css
+==========================*/
+
+.team-item-one{
+    &:hover{
+        & .team-img{
+            & .team-social{
+                bottom: 0;
+            }
+        }
+    }
+    & .team-img{
+        position: relative;
+        overflow: hidden;
+        & .team-social{
+            position: absolute;
+            bottom: -100%;
+            left: 20px;
+            background-color: $primary-color;
+            padding: 38px 15px 33px;
+            @include transition(.3s);
+            & ul.social-link{
+                & li{
+                    display: block;
+                    margin-bottom: 10px;
+                    &:last-child{
+                        margin-bottom: 0px;
+                    }
+                    & a{
+                        @extend %white;
+                    }
+                }
+            }
+        }
+    }
+    & .team-info{
+        padding-top: 25px;
+        & h3.title{
+            margin-bottom: 5px;
+        }
+    }
+}

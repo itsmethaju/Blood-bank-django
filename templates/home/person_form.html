@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<style>
+/* all */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+.form-horizontal {
+    width: 320px;
+    background-color: #ffffff;
+    padding: 25px 38px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+.control-label {
+    text-align: left !important;
+    padding-bottom: 4px;
+}
+.progress {
+    height: 3px !important;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.show-pass{
+    position: absolute;
+    top:5%;
+    right: 8%;
+}
+.progress-bar-danger {
+    background-color: #e90f10;
+}
+.progress-bar-warning{
+    background-color: #ffad00;
+}
+.progress-bar-success{
+    background-color: #02b502;
+}
+
+.fa-eye{
+    color: #022255;
+    cursor: pointer;
+}
+.ex-account p a{
+    color: #f6086e;
+    text-decoration: underline;
+}
+.fa-circle{
+    font-size: 6px;  
+}
+.fa-check{
+    color: #02b502;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+
+body {
+  display: flex;
+  
+  justify-content: center; /*center vertically */
+  align-items: center; /* center horizontally */
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  padding: 10px;
+}
+/* container and form */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  left: 0;
+  bottom: 0;
+}
+
+.container form .user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* inside the form user details */
+form .user__details .input__box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+}
+.user__details .input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user__details .input__box select  {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--main-grey);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+
+.user__details .input__box input:focus,
+.user__details .input__box input:valid {
+  border-color: var(--main-purple);
+}
+
+/* inside the form gender details */
+
+form .gender__details .gender__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .gender__details .category {
+  display: flex;
+  width: 80%;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+.gender__details .category label {
+  display: flex;
+  align-items: center;
+}
+
+.gender__details .category .dot {
+  height: 18px;
+  width: 18px;
+  background: var(--sub-grey);
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  border-color: var(--sub-grey);
+  background: var(--main-purple);
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* submit button */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  transition: all 0.3s ease;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+}
+
+@media only screen and (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user__details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender__details .category {
+    width: 100%;
+  }
+
+  .container form .user__details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user__details::-webkit-scrollbar {
+    width: 0;
+  }
+}
+.progress-bar {
+    border-radius: 5px;
+  }
+
+
+  #toggle{
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    color: #808080;
+    cursor: pointer;
+  }
+  #toggle i{
+    font-size: 20px;
+  }
+</style>
+{% load widget_tweaks %}
+
+<div class="container">
+    <div class="title">Registration</div>
+    
+   {% if messages %}
+   <div class="row">
+   <div class="col-sm-6 col-sm-offset-3">
+       {% for message in messages %}
+       <div class="alert alert-{{ message.tags }}" role="alert">
+           <p style="color:red">{{ message }}</p>
+       </div>
+       {% endfor %}
+     </div>
+ 
+   </div>
+ {% endif %}
+ <button>home</button>
+ <form method="post" class="form-1" enctype="multipart/form-data" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}" novalidate>
+    {% csrf_token %}
+      <div class="user__details">
+        <div class="input__box">
+          <span class="details">First Name</span>
+          <input type="text" name="first_name" maxlength="150" placeholder="First Name" class="form-control" id="id_first_name" required> 
+               </div>
+        <div class="input__box">
+            <span class="details">Last Name</span>
+            <input type="text" name="last_name" maxlength="150" placeholder="Last Name" class="form-control" id="id_last_name" required>          </div>
+        <div class="input__box">
+          <span class="details">Username</span>
+          <input type="text" name="username" maxlength="150" placeholder="Username" class="form-control" required="" id="id_username" required>        </div>
+        <div class="input__box">
+          <span class="details">Email</span>
+          <input type="email" name="email" maxlength="254" placeholder="Email" class="form-control" id="id_email" required>
+        </div>
+        <div class="input__box">
+            <span class="details">Phone Number</span>
+            <input type="number" name="phone" maxlength="10" placeholder="Mobile" class="form-control" id="id_phone" required>        
+        </div>
+        <div class="input__box">
+            <span class="details">State</span>
+            <select name="state" placeholder="State" class="form-control" required="" id="id_state">
+                <option value="" selected="">Select State</option>
+              {% for i in state %}
+                <option value="{{i.id}}">{{i.name}}</option>
+              {% endfor %}
+               
+              
+              </select>        </div>
+        <div class="input__box">
+            <span class="details">District</span>
+            {% render_field doctorForm.district required="required" class="form-control" placeholder="District" %}
+        </div>
+        <div class="input__box">
+            <span class="details">City</span>
+            {% render_field doctorForm.city required="required" class="form-control" placeholder="City" %}
+        </div>
+        <div class="input__box">
+            <span class="details">Address</span>
+            <input name="address"  maxlength="500" placeholder="Address" class="form-control" required="" id="id_address"placeholder="Address">
+        </div>
+        <div class="input__box">
+            <span class="details">Blood Group</span>
+            <select name="blood_group" placeholder="Blood Group" class="form-control" required="" id="id_blood_group">
+                <option value="" selected="">Select BloodGroup</option>
+              {% for i in bloodgroup %}
+                <option value="{{i.id}}">{{i.name}}</option>
+              {% endfor %}
+              </select>            
+        </div>
+        <div class="input__box">
+            <span class="details">Date of Birth</span>
+            <input type="date" name="date_of_birth" maxlength="100" placeholder="Date Of Birth" class="form-control" required id="id_date_of_birth">
+        </div>
+        <div class="input__box">
+            <span class="details">Genger</span>
+
+            <select name="gender" maxlength="10" placeholder="Gender" class="form-control" required="" id="id_gender">
+                <option value="Male" >Male</option>
+              
+                <option value="FeMale">FeMale</option>
+              
+                <option value="Other">Other</option> 
+ 
+
+          </select> 
+      </div>  
+        <div class="input__box">
+            <span class="details">Profile</span>
+            {% render_field doctorForm.image required="required" class="form-control" placeholder="Profile Picture" %}
+        </div>
+    </div>
+        <div class="user__details">
+        <div class="input__box">
+          <span class="details">Password</span>
+          <input type="password"  class="input-1" name="password" maxlength="128" placeholder="Password" class="form-control" required id="id_password">
+          <div class="progress-bar_wrap">
+            <div class="progress-bar_item progress-bar_item-1"></div>
+            <div class="progress-bar_item progress-bar_item-2"></div>
+            <div class="progress-bar_item progress-bar_item-3"></div>
+          </div>
+          <span class="progress-bar_text">Password is blank</span>
+
+        
+        </div>
+        
+
+        <div class="input__box">
+          <span class="details">Confirm Password</span>
+          <input type="Password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirmpassword" required>
+        </div>
+  
+      </div>
+     
+      <div class="button">
+        <input type="submit" value="Register">
+      </div>
+      <a href="{% url 'login' %}">Login</a>
+    </form>
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+          }
+          
+          .form-container {
+            display: block;
+            width: 500px;
+            margin: 60px auto;
+            text-align: left;
+          }
+          
+          lable {
+            display: block;
+            position: relative;
+            text-transform: uppercase;
+            color: #aaa;
+          }
+          
+          input[type='password'] {
+            width: 100%;
+            box-sizing: border-box;
+            height: 55px;
+            display: inline-block;
+            border: 3px solid #2F96EF;
+            border-radius: 5px;
+            padding: 0 15px;
+            margin: 10px 0;
+            transition: .2s;
+          }
+          
+          input[type='password']:focus {
+            outline: none;
+             -moz-outline: none;
+             -webkit-outline: none;
+          }
+          
+          lable:before {
+            content: "\f070";
+            color: #aaa;
+            font-size: 22px;
+            font-family: FontAwesome;
+            position: absolute;
+            right: 25px;
+            top: 44px;
+          }
+          
+          .progress-bar_wrap {
+            width: 300px;
+            height: 5px;
+            background: #F6F6FA;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            border-radius: 5px;
+          }
+          
+          
+          
+          .form-1 .progress-bar_item {
+            display: inline-block;
+            height: 100%;
+            width: 33.33%;
+            float: left;
+            visibility: hidden;
+            transition: background-color .2s, visisility .1s;
+          }
+          
+          .form-1 .active {
+            visibility: visible;
+          }
+          
+          .progress-bar_item-1 {
+            
+          }
+          
+          .progress-bar_item-2 {
+          
+          }
+          
+          .progress-bar_item-3 {
+          
+          }
+          
+          .progress-bar_text {
+            display: inline-block;
+            color: #aaa;
+            margin-left: 5px;
+            transition: .2s;
+          }
+          
+    </style>
+    
+    
+
+   
+
+  
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+ 
+
+        $("#id_state").change(function () {
+          var url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+          var stateId = $(this).val();  // get the selected country ID from the HTML input
+    
+          $.ajax({                       // initialize an AJAX request
+            url: '{% url 'ajax_load_cities' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+            data: {
+              'state': stateId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+              $("#id_district").html(data);  // replace the contents of the city input with the data that came from the server
+            }
+          });
+    
+        });
+        // this one is for fetching vanue data
+        $("#id_district").change(function () { //django-model-form created this id
+          var url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+          var districtId = $(this).val();  // get the selected country ID from the HTML input
+    
+          $.ajax({                       // initialize an AJAX request
+            url: '{% url 'ajax_load_vanues' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/) person_form.html template has this url var
+            data: {
+              'district': districtId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+              $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+            }
+          });
+    
+        });
+   
+        $( document ).ready(function() {
+  
+            const changeText = function (el, text, color) {
+              el.text(text).css('color', color);
+            };
+            
+            $('.input-1').keyup(function(){
+              let len = this.value.length;
+              const pbText = $('.form-1 .progress-bar_text');
+          
+              if (len === 0) {
+                $('.form-1 .progress-bar_item').each(function() {
+                  $(this).removeClass('active')
+                });
+                $('.form-1 .active').css('background-color', 'transparent');
+                changeText(pbText, 'Password is blank');
+              } else if (len > 0 && len <= 4) {
+                $('.form-1 .progress-bar_item-1').addClass('active');
+                $('.form-1 .progress-bar_item-2').removeClass('active');
+                $('.form-1 .progress-bar_item-3').removeClass('active');
+                $('.form-1 .active').css('background-color', '#FF4B47');
+                changeText(pbText, 'Too weak');
+              } else if (len > 4 && len <= 8) {
+                $('.form-1 .progress-bar_item-2').addClass('active');
+                $('.form-1 .progress-bar_item-3').removeClass('active');
+                $('.form-1 .active').css('background-color', '#F9AE35');
+                changeText(pbText, 'Could be stronger');
+              } else {
+                $('.form-1 .progress-bar_item').each(function() {
+                  $(this).addClass('active');
+                });
+                $('.form-1 .active').css('background-color', '#2DAF7D');
+                changeText(pbText, 'Strong password');
+              } 
+            });
+            
+            $('.input-2').keyup(function(){
+              let len = this.value.length;
+              const pbText = $('.form-2 .progress-bar_text');
+          
+              if (len === 0) {
+                $('.form-2 .progress-bar_item').each(function() {
+                  $(this).removeClass('active')
+                });
+                changeText(pbText, 'Password is blank');
+              } else if (len > 0 && len <= 4) {
+                $('.form-2 .progress-bar_item-1').addClass('active');
+                $('.form-2 .progress-bar_item-2').removeClass('active');
+                $('.form-2 .progress-bar_item-3').removeClass('active');
+                changeText(pbText, 'Too weak');
+              } else if (len > 4 && len <= 8) {
+                $('.form-2 .progress-bar_item-2').addClass('active');
+                $('.form-2 .progress-bar_item-3').removeClass('active');
+                changeText(pbText, 'Could be stronger');
+              } else {
+                $('.form-2 .progress-bar_item').each(function() {
+                  $(this).addClass('active');
+                });
+                changeText(pbText, 'Strong password');
+              } 
+            });
+            
+            $('.input-3').keyup(function(){
+              let len = this.value.length;
+              const pbText = $('.form-3 .progress-bar_text');
+          
+              if (len === 0) {
+                $(this).css('border-bottom-color', '#2F96EF');
+                changeText(pbText, 'Password is blank', '#aaa');
+              } else if (len > 0 && len <= 4) {
+                $(this).css('border-bottom-color', '#FF4B47');
+                changeText(pbText, 'Too weak', '#FF4B47');
+              } else if (len > 4 && len <= 8) {
+                $(this).css('border-bottom-color', '#F9AE35');
+                changeText(pbText, 'Could be stronger', '#aaa');
+              } else {
+                $(this).css('border-bottom-color', '#2DAF7D');
+                changeText(pbText, 'Strong password');
+              } 
+            });
+            
+            $('.input-4').keyup(function(){
+              let len = this.value.length;
+              const pbText = $('.form-4 .progress-bar_text');
+          
+              if (len === 0) {
+                $(this).css('border-color', '#2F96EF');
+                changeText(pbText, 'Password is blank', '#aaa');
+              } else if (len > 0 && len <= 4) {
+                $(this).css('border-color', '#FF4B47');
+                changeText(pbText, 'Too weak', '#FF4B47');
+              } else if (len > 4 && len <= 8) {
+                $(this).css('border-color', '#F9AE35');
+                changeText(pbText, 'Could be stronger', '#F9AE35');
+              } else {
+                $(this).css('border-color', '#2DAF7D');
+                changeText(pbText, 'Strong password', '#2DAF7D');
+              } 
+            });
+            
+          });
+            
+          
+          
+          
+
+  </script>
+</body>
+</html>

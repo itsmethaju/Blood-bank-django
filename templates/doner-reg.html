@@ -1,0 +1,285 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <h3><i style="font-weight: bold;    ">Request For Blood</i></h3>
+    <form method="POST">
+       {% csrf_token %}
+<div class="row mt-4">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Full Name</i></label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID</i></label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Contact Number</i></label>
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+   <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        <select class="form-control" id="department" name="blood_group" required>
+            {% for i in state %}
+            <option  value="{{ i.id }}">{{i.name}}</option>
+           {% endfor %}
+            </select>
+            </select>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        <select class="form-control" id="Employee" name="blood_group" required>
+            {% for i in city %}
+            <option id= "{{i.id}}"value="{{ i.state_id }}">{{i.name}}</option>
+           {% endfor %}
+            </select>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        <select class="form-control" id="Street" name="blood_group" required>
+
+             {% for i in street %}
+            <option  value ="{{i.city_id}}">{{i.name}}</option>
+           {% endfor %}
+         
+            </select>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Address</i></label>
+        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter Address" required></textarea>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        <select class="form-control" name="blood_group" required>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            </select>
+    </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Date Of Donation</i></label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+{% comment %} <script src="https://appuals.com/wp-content/litespeed/localres/aHR0cHM6Ly9jb2RlLmpxdWVyeS5jb20vjquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> {% endcomment %}
+    <script>
+
+$(document).ready(function(){
+ 
+    var department = $("#department");
+    var Employee = $("#Employee");
+    var Street = $("#Street");
+    var $options = Employee.find('option');
+    department.on('change',function(){
+       Employee.html($options.filter('[value="'+ this.value  +'"]'));
+    }).trigger('change'); 
+   
+    
+   }); 
+   $(document).ready(function(){
+ 
+   
+    var Employee = $("#Employee");
+    var Street = $("#Street");
+    var $id = Street.find('id');
+    Employee.on('change',function(){
+        Street.html($id.filter('[value="'+ this.value  +'"]'));
+    }).trigger('change'); 
+     
+   
+    
+   }); 
+</script>
+   {% comment %} <label for="state">State</label>
+   <select name="for-select" aria-label="Default select example" id="state" onchange="statefield()">
+   <option  selected> state</option>
+   {% for i in state %}
+   <option value="{{i.id}}" {% if request.GET.state == i.id|lower %}selected{% endif %}>{{i.name}}</option>
+   {% endfor %}
+   </select>
+   <br>
+   <br>
+   <label for="state">City</label>
+   <select name="for-select" aria-label="Default select example" id="city" onchange="cityfield()">
+   <option selected> city</option>
+   {% for i in city %}
+   <option value="{{i.id}}" {% if request.GET.city == i.id|lower %}selected{% endif %}>{{i.name}}</option>
+   {% endfor %}
+   </select>
+   <br>
+   <br>
+   <label for="state">Street</label>
+   <select name="for-select" aria-label="Default select example" id="street" onchange="streetfield()">
+   <option value="" selected> street</option>
+   {% for i in street %}
+   <option value="{{i.id}}">{{i.name}}</option>
+   {% endfor %}
+   </select> {% endcomment %}
+{% comment %} <script>
+    function statefield(){
+        stateid=document.getElementById('state').value;
+        window.location="?/state="+stateid;
+        console.log(stateid)
+    }
+    function cityfield(){
+        cityid=document.getElementById('city').value;
+        window.location="?/state="+'{{request.Get.state}}'+'&city='+cityid;
+    }
+</script> {% endcomment %}
+
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+      <form method="POST" enctype="multipart/form-data" id="profileForm" data-states-url="{% url 'ajax_load_states' %}"
+        novalidate>
+        {% csrf_token %}
+        <div class="form-group mb-3">
+          <label for="{{ profile_form.state.id_for_label }}" class="form-label">State:</label>
+          {{ profile_form.state }}
+
+          {% if profile_form.state.errors %}
+          <div class="alert alert-warning" role="alert">
+            {% for error in profile_form.state.errors %}
+            {{error}}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="{{ profile_form.city.id_for_label }}" class="form-label">City:</label>
+          {{ profile_form.city }}
+
+          {% if profile_form.city.errors %}
+          <div class="alert alert-warning" role="alert">
+            {% for error in profile_form.city.errors %}
+            {{error}}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        {% comment %} <div class="form-group mb-3">
+          <label for="{{ profile_form.street.id_for_label }}" class="form-label">Street:</label>
+          {{ profile_form.street }}
+
+          {% if profile_form.street.errors %}
+          <div class="alert alert-warning" role="alert">
+            {% for error in profile_form.street.errors %}
+            {{error}}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div> {% endcomment %}
+
+    </div>
+
+  </div>
+
+
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <button class="btn btn-outline-primary">
+      Update
+    </button>
+  </div>
+  </form>
+
+<script>
+  // State
+  $("#id_profile-country").change(function () {
+    var url = $("#profileForm").attr("data-states-url"); 
+    var countryId = $(this).val(); 
+
+    $.ajax({ 
+      url: '{% url '
+      ajax_load_states ' %}', 
+      data: {
+        'country': countryId 
+      },
+      success: function (data) { 
+        $("#id_profile-state").html(
+          data); 
+      }
+    });
+
+  });
+
+  // City
+  $("#id_profile-state").change(function () { 
+    var url = $("#profileForm").attr("data-states-url"); 
+    var stateId = $(this).val(); 
+
+    $.ajax({ 
+      url: '{% url '
+      ajax_load_cities ' %}', 
+      data: {
+        'state': stateId 
+      },
+      success: function (data) { 
+        $("#id_profile-city").html(
+          data); 
+      }
+    });
+
+  });
+
+  // Street 
+  $("#id_profile-city").change(function () { 
+    var url = $("#profileForm").attr("data-states-url"); 
+    var cityId = $(this).val(); 
+
+    $.ajax({ 
+      url: '{% url '
+      ajax_load_streets ' %}', 
+      data: {
+        'city': cityId 
+      },
+      success: function (data) { 
+        $("#id_profile-street").html(
+          data); 
+      }
+    });
+
+  });
+</script>
+
+
+
+{% endblock %}

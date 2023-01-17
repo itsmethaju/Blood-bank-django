@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?c3403cc32e830a2f0a4b0c3103e5c078") format("truetype"),
+url("./flaticon.woff?c3403cc32e830a2f0a4b0c3103e5c078") format("woff"),
+url("./flaticon.woff2?c3403cc32e830a2f0a4b0c3103e5c078") format("woff2"),
+url("./flaticon.eot?c3403cc32e830a2f0a4b0c3103e5c078#iefix") format("embedded-opentype"),
+url("./flaticon.svg?c3403cc32e830a2f0a4b0c3103e5c078#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-government:before {
+    content: "\f101";
+}
+.flaticon-game-controller:before {
+    content: "\f102";
+}
+.flaticon-serving-dish:before {
+    content: "\f103";
+}
+.flaticon-suitcase:before {
+    content: "\f104";
+}
+.flaticon-dumbbell:before {
+    content: "\f105";
+}
+.flaticon-gift-box:before {
+    content: "\f106";
+}
+.flaticon-chef:before {
+    content: "\f107";
+}
+.flaticon-shopping:before {
+    content: "\f108";
+}
+.flaticon-place:before {
+    content: "\f109";
+}
+.flaticon-find:before {
+    content: "\f10a";
+}
+.flaticon-social-care:before {
+    content: "\f10b";
+}
+.flaticon-email:before {
+    content: "\f10c";
+}
+.flaticon-color-palette:before {
+    content: "\f10d";
+}
+.flaticon-museum:before {
+    content: "\f10e";
+}
+.flaticon-balloons:before {
+    content: "\f10f";
+}
+.flaticon-gamepad:before {
+    content: "\f110";
+}
+.flaticon-add-user:before {
+    content: "\f111";
+}
+.flaticon-laptop:before {
+    content: "\f112";
+}
+.flaticon-headphone:before {
+    content: "\f113";
+}
+.flaticon-email-1:before {
+    content: "\f114";
+}
+.flaticon-play-button:before {
+    content: "\f115";
+}
+.flaticon-map:before {
+    content: "\f116";
+}
+.flaticon-star:before {
+    content: "\f117";
+}
+.flaticon-calendar:before {
+    content: "\f118";
+}
+.flaticon-star-1:before {
+    content: "\f119";
+}
+.flaticon-right-arrow:before {
+    content: "\f11a";
+}
+.flaticon-avatar:before {
+    content: "\f11b";
+}

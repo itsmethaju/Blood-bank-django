@@ -1,0 +1,303 @@
+
+/*=========================
+    13. Widget css
+==========================*/
+
+.sidebar-widget-area{
+    & .widget{
+        background-color: #f7f7f7;
+        padding: 32px 30px 40px;
+        & h4.widget-title{
+            margin-bottom: 27px;
+            &:after{
+                display: inline-block;
+                content: '..';
+                margin-left: 7px;
+            }
+        }
+        &.search-widget{
+            & form{
+                & .form_group{
+                    & i{
+                        position: absolute;
+                        top: 22px;
+                        right: 20px;
+                        @extend %primary;
+                    }
+                }
+            }
+        }
+        &.categories-widget{
+            & .categories-nav{
+                & li{
+                    margin-bottom: 15px;
+                    &:last-child{
+                        margin-bottom: 0px;
+                    }
+                    & a{
+                        display: block;
+                        padding: 18px 20px;
+                        background-color: $white;
+                        & span{
+                            float: right;
+                        }
+                        &:hover{
+                            @extend %bg-hover;
+                            @extend %white;
+                        }
+                    }
+                }
+            }
+        }
+        &.recent-post-widget{
+            & .recent-post-list{
+                & .post-thumbnail-content{
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 30px;
+                    border-bottom: 2px solid #e3e4e5;
+                    margin-bottom: 30px;
+                    &:last-child{
+                        padding-bottom: 0px;
+                        border-bottom: none;
+                        margin-bottom: 0px;
+                    }
+                    & img{
+                        min-width: 70px;
+                        max-width: 70px;
+                        height: 70px;
+                        object-fit: cover;
+                        margin-right: 20px;
+                    }
+                    & .post-title-date{
+                        & .posted-on{
+                            display: block;
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: #666666;
+                            line-height: 25px;
+                            & i{
+                                margin-right: 10px;
+                                @extend %primary;
+                            }
+                        }
+                        & h6{
+                            line-height: 25px;
+                            font-weight: 700;
+                            &:hover{
+                                @extend %primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.add-widget{
+            padding: 40px 30px;
+        }
+        &.tag-cloud-widget{
+            padding: 32px 30px 30px;
+            & a{
+                padding: 10px 19px;
+                border: 1px solid $border;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                &:hover{
+                    @extend %bg-hover;
+                    @extend %white;
+                }
+            }
+        }
+        &.search-listing-widget{
+            & .form_control{
+                height: 60px;
+                background-color: $white;
+                margin-bottom: 15px;
+            }
+            & i{
+                position: absolute;
+                top: 20px;
+                right: 25px;
+            }
+            & .nice-select{
+                height: 60px;
+                line-height: 60px;
+                border-radius: 0px;
+                margin-bottom: 15px;
+                border: none;
+            }
+            & .main-btn{
+                margin-top: 15px;
+            }
+        }
+        & .price-range-widget{
+            & .ui-widget{
+                height: 4px;
+                border: none;
+                background-color: #010101;
+                border-radius: 0px;
+                & .ui-slider-range{
+                    background-color: $primary-color;
+                }
+                & .ui-slider-handle{
+                    top: -6px;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: $primary-color;
+                    border: none;
+                }
+            }
+            & .price-number{
+                margin-bottom: 25px;
+                & input{
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+        }
+        &.newsletter-widget{
+            background-color: transparent;
+            padding: 0;
+            & .newsletter-widget-wrap{
+                position: relative;
+                padding: 75px 60px 80px;
+                text-align: center;
+                z-index: 1;
+                &:after{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(22, 22, 31, 0.6);
+                    z-index: -1;
+                }
+                & i{
+                    font-size: 60px;
+                    line-height: 1;
+                    color: $secondary-color;
+                    margin-bottom: 20px;
+                }
+                & h3{
+                    font-size: 36px;
+                    line-height: 45px;
+                    @extend %white;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+        &.reservation-form-widget{
+            & .form_control{
+                height: 60px;
+                margin-bottom: 15px;
+            }
+            & i{
+                position: absolute;
+                top: 20px;
+                right: 25px;
+            }
+            & .nice-select{
+                border: none;
+                background-color: $white;
+                height: 60px;
+                line-height: 60px;
+                margin-bottom: 15px;
+            }
+            & .main-btn{
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        &.contact-info-widget{
+            padding: 40px 30px;
+            & .contact-map{
+                position: relative;
+                & iframe{
+                    width: 100%;
+                    height: 305px;
+                    border: none;
+                    display: inherit;
+                }
+                & .support-icon{
+                    position: absolute;
+                    bottom: -30px;
+                    left: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 65px;
+                    height: 65px;
+                    border: 6px solid $white;
+                    box-shadow: 0px 5px 20px 0px rgba(93, 97, 101, 0.1);
+                    @extend %bg-hover;
+                    @extend %white;
+                    border-radius: 50%;
+                    font-size: 22px;
+                }
+            }
+            & .contact-info-content{
+                padding-top: 40px;
+                & h4.widget-title{
+                    margin-bottom: 10px;
+                }
+                & .info-list{
+                    & p{
+                        margin-bottom: 17px;
+                        & i{
+                            margin-right: 10px;
+                            color: $heading-color;
+                        }
+                    }
+                }
+                & .social-link{
+                    & li{
+                        margin-right: 5px;
+                        &  a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 50px;
+                            height: 50px;
+                            border: 1px solid $border;
+                            background-color: $white;
+                            &:hover{
+                                @extend %bg-hover;
+                                @extend %white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.business-hour-widget{
+            padding: 32px 30px 35px;
+            & ul.time-info{
+                & li{
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #e6e7e7;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                    &:last-child{
+                        margin-bottom: 0px;
+                        border-bottom: none;
+                        padding-bottom: 0px;
+                    }
+                    & span{
+                        &.day{
+                            color: $heading-color;
+                            font-weight: 500;
+                        }
+                        &.time{
+                            float: right;
+                        }
+                        &.st-close{
+                            @extend %primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

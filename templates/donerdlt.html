@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="{{details.image.url}}" alt="" width="310px" height="270px" style="border-radius: 50%;">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="profile-tab">
+                <div class="tab-pane">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h3>Name:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.donor.get_full_name}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Blood Group:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.blood_group}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Gender:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.gender}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Email:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.donor.email}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Phone:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.phone}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>State:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.state}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>District:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.district}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>City:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.city}}</h4>
+                        </div>
+                    </div>
+                   
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Address:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.address}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Date of Birth:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>{{details.date_of_birth}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+<option value="">Select</option>
+{% if streets %}
+{% for streets in streets %}
+<option value="{{ streets.pk }}">{{ streets.name }}</option>
+{% endfor %}
+{% else %}
+<input type="Password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirmpassword" required>
+{% endif %}

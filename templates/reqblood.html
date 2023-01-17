@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+{% load widget_tweaks %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+  button {
+          padding: 15px 25px;
+          border: unset;
+          border-radius: 15px;
+          color: #212121;
+          z-index: 1;
+          left:80%;
+          width: 200px;
+          background: #e8e8e8;
+          position: relative;
+          font-weight: 1000;
+          font-size: 17px;
+          -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+          box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+          transition: all 250ms;
+          overflow: hidden;
+         }
+         
+         button::before {
+          content: "";
+          position: absolute;
+        
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          
+          border-radius: 15px;
+          background-color: #fc4d4a;
+          z-index: -1;
+          -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+          box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+          transition: all 250ms
+         }
+         
+         button:hover {
+          color: #e8e8e8;
+         }
+         
+         button:hover::before {
+          width: 100%;
+         }
+</style>
+<div class="container">
+    <h3><i style="font-weight: bold;    ">Request For Blood</i></h3>
+    <form method="post" enctype="multipart/form-data" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}" novalidate>
+        {% csrf_token %}
+<div class="row mt-4">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Full Name</i></label>
+        {% render_field form.name class="form-control" placeholder="Name" %}
+    </div>
+
+
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID</i></label>
+        {% render_field form.email class="form-control" placeholder="Email" %}
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Contact Number</i></label>
+        {% render_field form.phone required="required" class="form-control" placeholder="Mobile" %}
+    </div>
+
+    <div class="form-group col-md-6">
+      <label><i style="font-weight: bold;">State</i></label>
+      <select name="state" placeholder="State" class="form-control" required="" id="id_state">
+        <option value="" selected="">Select State</option>
+      {% for i in state %}
+        <option value="{{i.id}}">{{i.name}}</option>
+      {% endfor %}
+       
+      
+      </select>       </div>
+    <div class="form-group col-md-6">
+      <label><i style="font-weight: bold;">District</i></label>
+      {% render_field form.district required="required" class="form-control" placeholder="District" %}
+    </div>
+    <div class="form-group col-md-6">
+      <label><i style="font-weight: bold;">City</i></label>
+      {% render_field form.city required="required" class="form-control" placeholder="City" %}
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Address</i></label>
+        {% render_field form.address required="required" class="form-control" placeholder="Address" %}
+    </div>
+
+
+
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        <select name="blood_group" placeholder="Blood Group" class="form-control" required="" id="id_blood_group">
+          <option value="" selected="">Select BloodGroup</option>
+        {% for i in bloodgroup %}
+          <option value="{{i.id}}">{{i.name}}</option>
+        {% endfor %}
+        </select>   
+    </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Date Of Donation</i></label>
+            <input type="date" name="date" maxlength="100" placeholder="Date" class="form-control" required id="id_date">
+
+        </div>
+</div>
+<button type="submit">Submit</button>
+</form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+  
+  
+    $("#id_state").change(function () {
+      var url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+      var stateId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_cities' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'state': stateId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_district").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+    // this one is for fetching vanue data
+    $("#id_district").change(function () { //django-model-form created this id
+      var url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+      var districtId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_vanues' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/) person_form.html template has this url var
+        data: {
+          'district': districtId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+
+  </script>
+{% endblock %}

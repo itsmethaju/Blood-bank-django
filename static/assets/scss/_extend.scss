@@ -1,0 +1,18 @@
+
+%white{
+    color: $white;
+}
+%primary{
+    color: $primary-color;
+}
+%secondary{
+    color: $secondary-color;
+}
+%bg-hover{
+    background-color: $primary-color;
+}
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

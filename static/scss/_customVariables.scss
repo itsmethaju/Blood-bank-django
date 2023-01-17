@@ -1,0 +1,294 @@
+// Color system
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #999;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #222;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: ();
+
+
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #9756f8;
+$pink:    #e83e8c !default;
+$red:     #fc4d4a;
+$orange:  #ff930d;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #01ebac;
+
+$colors: ();
+
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$primary:       $red;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan;
+$warning:       $yellow !default;
+$danger:        $red;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: ();
+
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+
+$gray-1000:                #8c45f6;
+
+
+
+
+// Spacing
+
+$spacer: 5px;
+$spacers: () ;
+
+$spacers: map-merge(
+  (
+    0: 0,
+    1: $spacer,
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    6: ($spacer * 6),
+    7: ($spacer * 7),
+    8: ($spacer * 8),
+    9: ($spacer * 9),
+    10: ($spacer * 10),
+    11: ($spacer * 11),
+    12: ($spacer * 12),
+    13: ($spacer * 13),
+    14: ($spacer * 14),
+    15: ($spacer * 15),
+    16: ($spacer * 16),
+    17: ($spacer * 17),
+    18: ($spacer * 18),
+    19: ($spacer * 19),
+    20: ($spacer * 20),
+    21: ($spacer * 21),
+    22: ($spacer * 22),
+    23: ($spacer * 23),
+    24: ($spacer * 24),
+    25: ($spacer * 25),
+    26: ($spacer * 26),
+    27: ($spacer * 27),
+    28: ($spacer * 28),
+    29: ($spacer * 29),
+    30: ($spacer * 30),
+    31: ($spacer * 31),
+    32: ($spacer * 32),
+    33: ($spacer * 33),
+    34: ($spacer * 34),
+    35: ($spacer * 35),
+    36: ($spacer * 36),
+    37: ($spacer * 37),
+    38: ($spacer * 38),
+    39: ($spacer * 39),
+    40: ($spacer * 40),
+    41: ($spacer * 41),
+    42: ($spacer * 42),
+    43: ($spacer * 43)
+  ),
+  $spacers
+);
+// Body
+
+$body-color:                $gray-400;
+
+
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+);
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1230px
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                              $gray-400;;
+$link-hover-color:                        $primary;
+$link-hover-decoration:                   none;
+
+
+// Components
+
+$box-shadow-sm:               0 30px 50px rgba($gray-800, .1);
+$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-lg:               0 0px 50px rgba($gray-800, .05);
+
+
+// Typography
+
+
+$font-family-sans-serif:      'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       'Poppins', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;
+$font-family-base:            $font-family-sans-serif;
+
+
+$line-height-base:            1.5;
+
+
+
+$font-size-base:              (15);
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+
+
+$h1-font-size:                (32);
+$h2-font-size:                (30);
+$h3-font-size:                (26);
+$h4-font-size:                (24);
+$h5-font-size:                (20);
+$h6-font-size:                (16);
+
+
+$headings-font-family:        $font-family-sans-serif;
+$headings-font-weight:        600;
+$headings-color:              $gray-800;
+
+
+
+
+// Navbar
+
+$navbar-light-color:                $primary;
+
+
+$navbar-toggler-padding-y:          4px;
+$navbar-toggler-padding-x:          7px;
+$navbar-toggler-font-size:          (18);
+$navbar-toggler-border-radius:      $btn-border-radius !default;
+
+
+
+$navbar-light-hover-color:          rgba($black, .7) !default;
+$navbar-light-active-color:         $primary;
+$navbar-light-disabled-color:       rgba($black, .3) !default;
+$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23");
+$navbar-light-toggler-border-color: $primary;
+
+
+// Buttons
+
+$btn-font-size:               (14);
+
+$btn-font-size-sm:            (12);
+
+
+
+
+
+
+
+// Forms
+
+$label-margin-bottom:                   .5rem !default;
+
+$input-padding-y:                       (13px);
+$input-padding-x:                       (20px);
+$input-font-family:                     $input-btn-font-family !default;
+$input-font-size:                       (14px);
+$input-font-weight:                     $font-weight-base !default;
+
+$input-bg:                              rgba($primary, 0.05);
+
+$input-color:                           $gray-400;
+$input-border-color:                    $gray-400 !default;
+$input-border-width:                    (0);
+$input-box-shadow:                      inset 0 1px 1px rgba($primary, .075);
+
+$input-height:                          (50px);
+
+
+$input-focus-bg:                        rgba($primary, 0.05);
+$input-focus-border-color:              null;
+$input-focus-color:                     $black;
+$input-focus-width:                     $input-btn-focus-width !default;
+$input-focus-box-shadow:                $primary;

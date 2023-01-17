@@ -1,0 +1,406 @@
+
+
+/*=========================
+    1. Start COMMON css 
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+html{
+    font-size: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    @include box-sizing (border-box);
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    @include transition(.3s);
+    &:hover,&:focus{
+        color: inherit;
+        text-decoration: none;
+    }
+}
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+i,
+span,
+a{
+    display: inline-block;
+}
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-weight: 700;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color: $heading-color;
+    margin: 0px;
+    font-family: $quicksand;
+    font-weight: 700;
+}
+h1 {
+    font-size: 90px;
+    line-height: 90px;
+}
+h2 {
+    font-size: 48px;
+    line-height: 55px;
+}
+h3 {
+    font-size: 30px;
+    line-height: 40px;
+}
+h4 {
+    font-size: 24px;
+    line-height: 32px;
+}
+h5 {
+    font-size: 18px;
+    line-height: 28px;
+}
+h6 {
+    font-size: 16px;
+}
+ul,ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+p{
+    color: $text-color;
+    margin: 0px;
+}
+input,textarea{
+    display: inherit;
+}
+img{
+    max-width: 100%;
+}
+body {
+    font-weight: normal;
+    font-style: normal;
+    color: $text-color;
+    font-family: $mulish;
+    font-size: 15px;
+    line-height: 24px;
+    overflow-x: hidden;
+}
+
+// others common css here
+@media (min-width: 1200px){
+    .container{
+        max-width: 1200px;
+    }
+}
+.bg_cover{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.parallax-bg {
+    background-attachment: fixed;
+}
+.slick-slide {
+    outline: 0;
+}
+ul.social-link{
+    & li{
+        display: inline-block;
+    }
+}
+.form_group{
+    position: relative;
+}
+.form_control{
+    width: 100%;
+    padding: 0 25px;
+    height: 60px;
+    border: none;
+}
+textarea.form_control{
+    padding-top: 15px;
+    display: inherit;
+}
+.section-title{
+    & span.sub-title{
+        margin-bottom: 17px;
+        display: block;
+        @extend %primary;
+        font-size: 20px;
+        font-weight: 600;
+        position: relative;
+        &:after,&:before{
+            display: inline-block;
+            content: '..';
+        }
+        &:after{
+            margin-left: 7px;
+        }
+        &:before{
+            margin-right: 7px;
+        }
+    }
+    &.section-title-left{
+        & span.sub-title{
+            &:after{
+                display: none;
+            }
+        }
+    }
+    &.section-title-right{
+        & span.sub-title{
+            &:before{
+                display: none;
+            }
+        }
+    }
+    & h2{
+        margin-bottom: 20px;
+        font-weight: 700;
+        @media #{$lg}{
+            font-size: 32px;
+            line-height: 40px;
+        }
+        @media #{$xs}{
+            font-size: 28px;
+            line-height: 40px;
+        }
+    }
+    &.section-title-white{
+        & span.sub-title,
+        & h2,
+        & p{
+            @extend %white;
+        }
+    }
+    &.section-title-two{
+        & h2{
+            font-weight: 300;
+            line-height: 50px;
+            & span.line{
+                position: relative;
+                font-weight: 700;
+                z-index: 1;
+                &:after{
+                    position: absolute;
+                    left: 0;
+                    bottom: 5px;
+                    content: '';
+                    height: 8px;
+                    width: 100%;
+                    background-color: $secondary-color;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+/*===== All bg =====*/
+.light-bg{
+    background-color: $light-bg;
+}
+.dark-black{
+    background-color: $dark-black;
+}
+/*===== All Button Style =====*/
+button{
+    border: none;
+}
+.main-btn{
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+    background-color: $primary-color;
+    padding: 16px 40px;
+    color: $white;
+    font-family: $quicksand;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    overflow: hidden;
+    &:hover{
+        color: $white;
+        &:before{
+            bottom: 0;
+        }
+    }
+    &:before{
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: $heading-color;
+        z-index: -1;
+        @include transition(.3s);
+    }
+    &.icon-btn{
+        &:after{
+            display: inline-block;
+            content: '\e61a';
+            font-family: 'themify';
+            font-size: 12px;
+            margin-left: 5px;
+        }
+    }
+    &.filled-btn{
+        background-color: transparent;
+        border: 2px solid $heading-color;
+        color: $heading-color;
+        line-height: 25px;
+    }
+}
+
+/*
+    nice select css
+*/
+.nice-select{
+    outline: none;
+    float: none;
+    border-radius: 0px;
+    padding: 0 25px;
+    &.open{
+        &:after{
+            transform: none;
+        }
+    }
+    &:after{
+        content: "\e64b";
+        font-family: 'themify';
+        right: 30px;
+        font-size: 12px;
+        font-weight: 400;
+        transform: none;
+        border: none;
+        top: 0;
+        margin-top: 0;
+        color: #2E2E2E;
+    }
+    & .list{
+        width: 100%;
+    }
+}
+/*
+    search 
+*/
+#search-modal {
+    background: rgba(23, 26, 33, 0.85);
+    & .modal-content{
+        background: 0 0;
+        box-shadow: none;
+        border: none; 
+        &:focus{
+            box-shadow: none; 
+        }
+    }
+    & .form_control{
+        padding-left: 0;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+        color: #fff;
+        margin-bottom: 0; 
+        height: 50px;
+        &:focus{
+            border-color: $primary-color;
+        }
+        &::placeholder{
+            color: #fff; 
+        }
+    }
+    & .search_btn{
+        position: absolute;
+        background: transparent;
+        top: 10px;
+        right: 10px;
+        color: #fff; 
+    }
+}
+/*
+    Start Preloader css
+*/
+.preloader {
+    background-color: $white;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 99999;
+    & .loader{
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        z-index: 9999; 
+        animation: loadershake infinite .8s linear;
+    }
+}
+@keyframes loadershake {
+    0%{
+        transform: translateY(5px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
+/*
+    End Preloader css
+*/
+
+/*
+    Start scroll_up css
+*/
+.back-to-top {
+    background: $primary-color;
+    border-radius: 50%;
+    bottom: 30px;
+    color: $white;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    z-index: 337;
+    &:hover,&:focus{
+        background: #0c1b36;
+        color: $white;
+    }
+}
+/*
+    End scroll_up css
+*/
+/*====================
+    End COMMON css 
+======================*/

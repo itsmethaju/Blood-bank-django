@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+{% if requests %}
+<h3 class="text-center">All Blood Requests</h3>
+<br>
+<table class="table table-sm table-bordered">
+  <tr class="table-danger">
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Blood Group</th>
+    <th>Donation Date</th>
+    <th>State | City</th>
+  </tr>
+  {% for i in requests %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.blood_group}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.state}} | {{i.city}}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% else %}
+<h2>No Blood Request Available</h2>
+{% endif %}
+</div>
+{% endblock %}

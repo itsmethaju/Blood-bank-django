@@ -1,0 +1,82 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Fioxen - Directory & Listings HTML Template
+    Template URI: site.com
+    Description: Fioxen - Directory & Listings HTML Template
+    Author: WebTend 
+    Author URI: https://webtend.net/
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+##### CSS INDEX  ######
+
+    01. Theme default css
+    02. Header css
+    03. Hero css
+    04. Category CSS
+    05. Features css
+    06. Elements css
+    07. Listing css
+    08. Place css
+    09. Products css
+    10. Testimonial css
+    11. Team css
+    12. Blog css
+    13. Widget css
+    14. Footer css
+    15. Contact css
+
+
+-----------------------------------------------------------------------------------*/
+
+@import 'variables';
+@import 'mixin';
+
+//common
+@import 'common';
+
+//Extend
+@import 'extend';
+
+//Header
+@import 'header';
+
+//Hero
+@import 'hero';
+
+//Category
+@import 'category';
+
+//Features
+@import 'features';
+
+//Elements
+@import 'elements';
+
+//Listing
+@import 'listing';
+
+//Place
+@import 'place';
+
+//Products
+@import 'products';
+
+//Testimonial
+@import 'testimonial';
+
+//Team
+@import 'team';
+
+//Blog
+@import 'blog';
+
+//Widget
+@import 'widget';
+
+//Footer
+@import 'footer';
+
+//Contact
+@import 'contact';

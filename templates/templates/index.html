@@ -1,0 +1,610 @@
+
+   {% extends 'templates/base.html' %}
+   {% load static %}
+   {%block content%}
+        <!--====== Start Preloader ======-->
+        <div class="preloader">
+            <div class="loader">
+                <img src="static/assets/images/loader.png" alt="loader">
+            </div>
+        </div>
+        <!--====== End Preloader ======-->
+        <!--====== Start Header Section ======-->
+       
+        <!--====== End Header Section ======-->
+        <!--====== Start Hero Section ======-->
+        <section class="hero-area">
+            <div class="hero-wrapper-one">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="hero-content">
+                                <h1>Donate blood and be the reason for someone's existence</h1>
+                                <h3>You can become a superhero too.</h3>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== End Hero Section ======-->
+        <!--====== Start Category Section ======-->
+        <section class="category-area">
+            <div class="container">
+                <div class="category-wrapper-one">
+                    <div class="row no-gutters">
+                        {% for i in all_group %}
+                        <div class="col-lg-2 col-md-4 category-column">
+                            <div class="category-item category-item-one">
+                                <div class="info text-center">
+                                    <div class="icon">
+                                        <a href="/donors_list/{{i.id}}/"><img src="{{i.image.url}}" alt="Brand Logo"></a>
+                                    </div>
+                                    <h6>{{i.total}}</h6>
+                                </div>
+                                 
+                            </div>
+                        </div>
+                        {% endfor %}
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== End Category Section ======-->
+    
+        <!--====== Start offer Section ======-->
+        <section class="cta-area">
+            <div class="cta-wrapper-one bg_cover" style="background-image: url(static/assets/images/banner1.jpeg);">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="cta-content-box text-center">
+                                <img src="static/assets/images/icon-1.png" alt="offer icon">
+                                <h2>Stay fit and eat right and donate blood</h2>
+                                <a href="/become_donor/" class="main-btn icon-btn">Become A Donor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== End offer Section ======-->
+        <!--====== Start Features Section ======-->
+        {% comment %} <section class="features-area">
+            <div class="features-wrapper-one pt-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="features-img">
+                                <img src="assets/images/features/features-1.jpg" alt="Features Image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="features-content-box features-content-box-one">
+                                <div class="section-title section-title-left mb-25">
+                                    <span class="sub-title">Our Speciality</span>
+                                    <h2>Comprehnsive All Great
+                                        Destination Here</h2>
+                                </div>
+                                <h5>Risus urnas Iaculis per amet vestibulum luctus.tincidunt ultricies aenean
+                                    quam eros eleifend sodales cubilia mattis quam.</h5>
+                                <ul class="features-list-one">
+                                    <li class="list-item">
+                                        <div class="icon">
+                                            <i class="flaticon-find"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>Find What You Want</h5>
+                                            <p>Rhoncus dolor quam etiam mattis, tincidunt nec lobortis sociis
+                                                facilisi aenean netus tempor duis.</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="icon">
+                                            <i class="flaticon-place"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>Easy Choose Your Place</h5>
+                                            <p>Rhoncus dolor quam etiam mattis, tincidunt nec lobortis sociis
+                                                facilisi aenean netus tempor duis.</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="icon">
+                                            <i class="flaticon-social-care"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h5>Live Online Assistance</h5>
+                                            <p>Rhoncus dolor quam etiam mattis, tincidunt nec lobortis sociis
+                                                facilisi aenean netus tempor duis.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> {% endcomment %}
+        <!--====== End Features Section ======-->
+        <!--====== Start Place Section ======-->
+        {% comment %} <section class="place-area pt-115 pb-110">
+            <div class="container-fluid place-container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center mb-60">
+                            <span class="sub-title">Feature Places</span>
+                            <h2>Explore By Destination</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="place-slider-one">
+                    <div class="place-item place-item-one">
+                        <div class="place-thumbnail">
+                            <img src="static/assets/images/place/place-1.jpg" alt="Place Image">
+                            <div class="place-overlay">
+                                <div class="place-content text-center">
+                                    <span class="listing">10 Listing</span>
+                                    <h3 class="title">Australia</h3>
+                                    <a href="listing-grid.html" class="arrow-btn"><i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="place-item place-item-one">
+                        <div class="place-thumbnail">
+                            <img src="assets/images/place/place-2.jpg" alt="Place Image">
+                            <div class="place-overlay">
+                                <div class="place-content text-center">
+                                    <span class="listing">10 Listing</span>
+                                    <h3 class="title">Australia</h3>
+                                    <a href="listing-grid.html" class="arrow-btn"><i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="place-item place-item-one">
+                        <div class="place-thumbnail">
+                            <img src="static/assets/images/place/place-3.jpg" alt="Place Image">
+                            <div class="place-overlay">
+                                <div class="place-content text-center">
+                                    <span class="listing">10 Listing</span>
+                                    <h3 class="title">Australia</h3>
+                                    <a href="listing-grid.html" class="arrow-btn"><i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="place-item place-item-one">
+                        <div class="place-thumbnail">
+                            <img src="static/assets/images/place/place-4.jpg" alt="Place Image">
+                            <div class="place-overlay">
+                                <div class="place-content text-center">
+                                    <span class="listing">10 Listing</span>
+                                    <h3 class="title">Australia</h3>
+                                    <a href="listing-grid.html" class="arrow-btn"><i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="place-item place-item-one">
+                        <div class="place-thumbnail">
+                            <img src="static/assets/images/place/place-2.jpg" alt="Place Image">
+                            <div class="place-overlay">
+                                <div class="place-content text-center">
+                                    <span class="listing">10 Listing</span>
+                                    <h3 class="title">Australia</h3>
+                                    <a href="listing-grid.html" class="arrow-btn"><i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== End Place Section ======--> {% endcomment %}
+        <!--====== Start Download Section ======-->
+        {% comment %} <section class="download-app">
+            <div class="download-wrapper-one pt-115">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="app-img">
+                                <img src="assets/images/app-1.png" alt="App Image">
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="download-content-box download-content-box-one">
+                                <div class="section-title section-title-left mb-25">
+                                    <span class="sub-title">Downlaod App</span>
+                                    <h2>Comprehnsive All Great
+                                        Destination Here</h2>
+                                </div>
+                                <p>Dictumst integer tellus eros quam vestibulum ante tortor mollis adipisn pharetra curae curae and pulvinar porttitor</p>
+                                <ul class="button">
+                                    <li>
+                                        <a href="index.html" class="app-btn">
+                                            <div class="icon">
+                                                <i class="ti-android"></i>
+                                            </div>
+                                            <div class="info">
+                                                <span>get it on</span>
+                                                <h6>Goole Play</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="app-btn">
+                                            <div class="icon">
+                                                <i class="ti-apple"></i>
+                                            </div>
+                                            <div class="info">
+                                                <span>get it on</span>
+                                                <h6>App Store</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="counter-area pt-120">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-ms-12">
+                                            <div class="counter-item counter-item-one">
+                                                <div class="info">
+                                                    <h4><span>Member</span>Professional</h4>
+                                                    <h3><span class="count">220</span> +</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-ms-12">
+                                            <div class="counter-item counter-item-one">
+                                                <div class="info">
+                                                    <h4><span>Listing</span>Received</h4>
+                                                    <h3><span class="count">72</span>K +</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-ms-12">
+                                            <div class="counter-item counter-item-one">
+                                                <div class="info">
+                                                    <h4><span>Client</span>Satisfaction</h4>
+                                                    <h3><span class="count">50</span>K +</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--====== End Download Section ======-->
+        <!--====== Start Popular Listing Section ======--> {% endcomment %}
+        {% comment %} <section class="listing-grid-area pt-75 pb-110">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center mb-60">
+                            <span class="sub-title">Featured List</span>
+                            <h2>Explore Destination</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="listing-slider-one">
+                    <div class="listing-item listing-grid-item-two">
+                        <div class="listing-thumbnail">
+                            <img src="assets/images/listing/listing-grid-7.jpg" alt="Listing Image">
+                            <a href="#" class="cat-btn"><i class="flaticon-chef"></i></a>
+                            <span class="featured-btn">Featured</span>
+                            <ul class="ratings ratings-four">
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li><span><a href="#">(02 Reviews)</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
+                            <p>Popular restaurant in california</p>
+                            <span class="phone-meta"><i class="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span class="status st-open">Open</span></span>
+                            <div class="listing-meta">
+                                <ul>
+                                    <li><span><i class="ti-location-pin"></i>California, USA</span></li>
+                                    <li><span><i class="ti-heart"></i><a href="#">Save</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-item listing-grid-item-two">
+                        <div class="listing-thumbnail">
+                            <img src="assets/images/listing/listing-grid-8.jpg" alt="Listing Image">
+                            <a href="#" class="cat-btn"><i class="flaticon-dumbbell"></i></a>
+                            <ul class="ratings ratings-three">
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li><span><a href="#">(02 Reviews)</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="title"><a href="listing-details-1.html">Gym Ground</a></h3>
+                            <p>Popular restaurant in california</p>
+                            <span class="phone-meta"><i class="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span class="status st-close">close</span></span>
+                            <div class="listing-meta">
+                                <ul>
+                                    <li><span><i class="ti-location-pin"></i>California, USA</span></li>
+                                    <li><span><i class="ti-heart"></i><a href="#">Save</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-item listing-grid-item-two">
+                        <div class="listing-thumbnail">
+                            <img src="assets/images/listing/listing-grid-9.jpg" alt="Listing Image">
+                            <a href="#" class="cat-btn"><i class="flaticon-government"></i></a>
+                            <span class="featured-btn">Featured</span>
+                            <ul class="ratings ratings-five">
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li><span><a href="#">(02 Reviews)</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="title"><a href="listing-details-1.html">City Palace</a></h3>
+                            <p>Popular restaurant in california</p>
+                            <span class="phone-meta"><i class="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span class="status st-open">Open</span></span>
+                            <div class="listing-meta">
+                                <ul>
+                                    <li><span><i class="ti-location-pin"></i>California, USA</span></li>
+                                    <li><span><i class="ti-heart"></i><a href="#">Save</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-item listing-grid-item-two">
+                        <div class="listing-thumbnail">
+                            <img src="assets/images/listing/listing-grid-1.jpg" alt="Listing Image">
+                            <a href="#" class="cat-btn"><i class="flaticon-chef"></i></a>
+                            <span class="featured-btn">Featured</span>
+                            <ul class="ratings ratings-two">
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li class="star"><i class="flaticon-star-1"></i></li>
+                                <li><span><a href="#">(02 Reviews)</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="listing-content">
+                            <h3 class="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
+                            <p>Popular restaurant in california</p>
+                            <span class="phone-meta"><i class="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span class="status st-open">Open</span></span>
+                            <div class="listing-meta">
+                                <ul>
+                                    <li><span><i class="ti-location-pin"></i>California, USA</span></li>
+                                    <li><span><i class="ti-heart"></i><a href="#">Save</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== End Popular Listing Section ======--> {% endcomment %}
+        <section class="client-area pt-120">
+            <div class="client-wrapper-one pb-120">
+                <div class="container">
+                    <div class="client-slider-one">
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/1.png" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/2.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/3.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/4.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/2.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== Start Intro Video Section ======-->
+        <section class="intro-video">
+            <div class="intro-wrapper-one bg_cover pt-115" style="background-image: url(static/assets/images/hero/blood.jpg);">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="play-content play-content-one text-center">
+                                <a href="https://youtu.be/Af0gk_kiGac" class="video-popup"><i class="flaticon-play-button"></i></a>
+                                <h5>Play Video</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="intro-content-box intro-content-box-one">
+                                <div class="section-title section-title-left section-title-white mb-35">
+                                    
+                                    <h2>One donation of blood can save up to three lives</h2>
+                                </div>
+                                <p>As the need for blood continues to grow around the world, WHO and partners recognize all those who volunteer to give blood, and invite more people to be heroes by donating blood voluntarily and regularly. On World Blood Donor Day, 14 June, help spread the message, "Every blood donor is a hero,"</p>
+                                <a href="/" class="main-btn icon-btn">Explore List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+        <!--====== End Intro Video Section ======-->
+        <!--====== Start Newsletter Section ======-->
+        {% comment %} <section class="newsletter-area">
+            <div class="container">
+                <div class="newsletter-wrapper newsletter-wrapper-one bg_cover" style="background-image: url(assets/images/bg/newsletter-bg-1.jpg);">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="newsletter-content-box-one">
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="content">
+                                    <h2>Get Special
+                                        Rewards</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="newsletter-form">
+                                <div class="form_group">
+                                    <input type="email" class="form_control" placeholder="Enter Address" name="email" required>
+                                    <i class="ti-location-pin"></i>
+                                    <button class="main-btn">Subscribe +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> {% endcomment %}
+        <!--====== End Newsletter Section ======-->
+        <!--====== Start Client Section ======-->
+
+        <!--====== End Client Section ======-->
+        <!--====== Start Blog Section ======-->
+        {% comment %} <section class="blog-area pt-115 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-title text-center mb-60">
+                            <span class="sub-title">Recent Articles</span>
+                            <h2>Every Single Journal</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-post-item blog-post-item-one mb-40">
+                            <div class="post-thumbnail">
+                                <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt="Blog Image"></a>
+                                <div class="post-date"><a href="#">20 <span>Oct</span></a></div>
+                            </div>
+                            <div class="entry-content">
+                                <a href="#" class="cat-btn"><i class="ti-bookmark-alt"></i>Tours & Travel</a>
+                                <h3 class="title"><a href="blog-details.html">Duis nonummy socios mattis
+                                    tempus penatibus</a></h3>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><span><i class="ti-comments-smiley"></i><a href="#">0 Comment</a></span></li>
+                                        <li><span><i class="ti-id-badge"></i><a href="#">By admin</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-post-item blog-post-item-one mb-40">
+                            <div class="post-thumbnail">
+                                <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg" alt="Blog Image"></a>
+                                <div class="post-date"><a href="#">20 <span>Oct</span></a></div>
+                            </div>
+                            <div class="entry-content">
+                                <a href="#" class="cat-btn"><i class="ti-bookmark-alt"></i>Tours & Travel</a>
+                                <h3 class="title"><a href="blog-details.html">Litora phasellus in phasellus
+                                    curabitur porta eun</a></h3>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><span><i class="ti-comments-smiley"></i><a href="#">0 Comment</a></span></li>
+                                        <li><span><i class="ti-id-badge"></i><a href="#">By admin</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-post-item blog-post-item-one mb-40">
+                            <div class="post-thumbnail">
+                                <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg" alt="Blog Image"></a>
+                                <div class="post-date"><a href="#">20 <span>Oct</span></a></div>
+                            </div>
+                            <div class="entry-content">
+                                <a href="#" class="cat-btn"><i class="ti-bookmark-alt"></i> Tours & Travel</a>
+                                <h3 class="title"><a href="blog-details.html">Mattis parturent tortor lectus
+                                    lestie sapien Dapus</a></h3>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><span><i class="ti-comments-smiley"></i><a href="#">0 Comment</a></span></li>
+                                        <li><span><i class="ti-id-badge"></i><a href="#">By admin</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="button text-center mt-40">
+                            <a href="blog.html" class="main-btn icon-btn">View Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> {% endcomment %}
+        <!--====== End Blog Section ======-->
+        <section class="client-area pt-120">
+            <div class="client-wrapper-one pb-120">
+                <div class="container">
+                    <div class="client-slider-one">
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/1.png" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/5.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/6.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/7.png" alt="Client Image"></a>
+                            </div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-img">
+                                <a href="#"><img src="static/assets/images/blood/2.jpg" alt="Client Image"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+{% endblock %}

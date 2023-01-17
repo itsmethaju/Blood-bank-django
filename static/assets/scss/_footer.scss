@@ -1,0 +1,213 @@
+
+/*=========================
+    14. Footer css
+==========================*/
+
+.app-btn{
+    display:inline-flex;
+    align-items: center;
+    background-color: $white;
+    padding: 17px 20px;
+    border-radius: 3px;
+    &.android-btn{
+        margin-right: 5px;
+    }
+    & .icon{
+        margin-right: 10px;
+        & i{
+            color: $primary-color;
+        }
+        
+    }
+    & .info{
+        line-height: 1;
+        & span{
+            display: block;
+            text-transform: uppercase;
+            font-size: 10px;
+            line-height: 10px;
+        }
+        & h6{
+            line-height: 15px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+}
+
+.footer-widget{
+    & .widget{
+        & h4.widget-title{
+            margin-bottom: 20px;
+            @extend %white;
+        }
+        & p{
+            @extend %white;
+        }
+        &.about-widget{
+            & ul.button{
+                padding-bottom: 30px;
+                border-bottom: 1px solid rgba(223, 225, 228, 0.2);
+                margin-bottom: 22px;
+                & li{
+                    display: inline-block;
+                    & .app-btn{
+                        &:hover{
+                            background-color: $primary-color;
+                            color: $white;
+                            & .icon{
+                                & i{
+                                    color: $white;
+                                }
+                            }
+                            & .info{
+                                & h6{
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .footer-social{
+                & h4{
+                    color: $white;
+                    margin-bottom: 25px;
+                }
+                & ul.social-link{
+                    & li{
+                        margin-right: 10px;
+                        & a{
+                            width: 50px;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: $white;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            &:hover{
+                                @extend %bg-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.recent-post-widget{
+            & .post-widget-list{
+                & .post-content-item{
+                    margin-bottom: 30px;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                    & .post-title-date{
+                        & span.posted-on{
+                            display: block;
+                            margin-bottom: 10px;
+                            font-size: 14px;
+                        }
+                        & h6.title{
+                            color: $white;
+                            font-size: 15px;
+                            line-height: 24px;
+                            &:hover{
+                                @extend %primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.categories-widget{
+            & ul.categories-link{
+                & li{
+                    margin-bottom: 10px;
+                    & a{
+                        @extend %white;
+                        &:before{
+                            display: inline-block;
+                            content: "\e649";
+                            font-family: 'themify';
+                            margin-right: 10px;
+                            font-size: 14px;
+                            @include transition(.3s);
+                        }
+                        &:hover{
+                            @extend %primary;
+                            &:before{
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.newsletter-widget{
+            & P{
+                margin-bottom: 30px;
+            }
+            & form{
+                & .form_control{
+                    margin-bottom: 20px;
+                    border-radius: 3px;
+                }
+                & .main-btn{
+                    border-radius: 30px;
+                    color: $heading-color;
+                    background-color: $secondary-color;
+                    &:hover{
+                        color: $white;
+                        &:before{
+                            background-color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.copyright-area{
+    border-top: 1px solid rgba(223, 225, 228, 0.15);
+    padding: 25px 0;
+    & .copyright-text{
+        @media #{$xm}{
+            text-align: center;
+        }
+        & p{
+            @extend %white;
+            & span{
+                @extend %secondary;
+            }
+        }
+    }
+    & .copyright-link{
+        float: right;
+        @media #{$xm}{
+            float: none;
+            text-align: center;
+            padding-top: 15px;
+        }
+        & ul{
+            & li{
+                display: inline-block;
+                &:last-child{
+                    &:after{
+                        display: none;
+                    }
+                }
+                &:after{
+                    display: inline-block;
+                    content: '|';
+                    margin-left: 7px;
+                    margin-right: 5px;
+                }
+                & a{
+                    color: #aaaaaa;
+                    &:hover{
+                        @extend %primary;
+                    }
+                }
+            }
+        }
+    }
+}

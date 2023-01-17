@@ -1,0 +1,1046 @@
+/*------------------------------------------------------------------
+6. body / body
+-------------------------------------------------------------------*/
+body{
+	-ms-overflow-style: scrollbar;
+	min-width: 320px;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 16px;
+	}
+
+	@include media-breakpoint-up(md) {
+		line-height: 28px;
+	}
+}
+/*------------------------------------------------------------------
+7. pageWrapper / .pageWrapper
+-------------------------------------------------------------------*/
+.pageWrapper{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+/*------------------------------------------------------------------
+8. h1 , .h1 / h1 , .h1
+-------------------------------------------------------------------*/
+h1 , .h1{
+	@include media-breakpoint-up(sm) {
+		font-size: 38px;
+	}
+	@include media-breakpoint-up(md) {
+		font-size: 38px;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 45px;
+		line-height: 52px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 55px;
+		line-height: 72px;
+	}
+}
+/*------------------------------------------------------------------
+9. h2 , .h2 / h2 , .h2
+-------------------------------------------------------------------*/
+h2 , .h2{
+	@include media-breakpoint-up(md){
+		font-size: 35px;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 40px;
+	}
+}
+/*------------------------------------------------------------------
+10. h3 , .h3 / h3 , .h3
+-------------------------------------------------------------------*/
+h3 , .h3{
+	@include media-breakpoint-up(sm){
+		font-size: 28px;
+	}
+	@include media-breakpoint-up(lg){
+		font-size: 35px;
+	}
+}
+/*------------------------------------------------------------------
+11. h4 , .h4 / h2 , .h4
+-------------------------------------------------------------------*/
+h4 , .h4{
+	@include media-breakpoint-up(sm){
+		font-size: 26px;
+	}
+	@include media-breakpoint-up(md){
+		font-size: 30px;
+	}
+}
+.fwSemibold{
+	font-weight: 600;
+}
+/*------------------------------------------------------------------
+12. introBlock / .introBlock
+-------------------------------------------------------------------*/
+.introBlock{
+	z-index: 1;
+	min-height: 100vh;
+	.imgHolder{
+		max-width: 440px;
+		@include media-breakpoint-up(md){
+			max-width: 450px;
+		}
+		@include media-breakpoint-up(lg){
+			max-width: 571px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+13. iconGroupImg / .iconGroupImg
+-------------------------------------------------------------------*/
+.iconGroupImg{
+	.icnImg{
+		z-index: -1;
+		&[data-icon="icon1"]{
+			top: 64px;
+			left: 50%;
+			margin-left: -700px;
+			@include size(102px, 122px);
+			transform: translateX(-50%) rotate(360deg);
+		}
+		&[data-icon="icon2"]{
+			top: 160px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-left: 30px;
+			@include size(20px);
+			@include media-breakpoint-up(lg){
+				@include size(24px);
+			}
+		}
+		&[data-icon="icon3"]{
+			top: 174px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-left: 573px;
+			@include size(78px, 79px);
+		}
+		&[data-icon="icon4"]{
+			top: 49.5%;
+			left: 50%;
+			transform: translate(-50%, -50.5%);
+			@include size(62px, 61px);
+			margin-left: -845px;
+		}
+		&[data-icon="icon5"]{
+			left: 50%;
+			top: 47%;
+			margin-left: 663px;
+			@include size(31px);
+			transform: translate(-50%, -53%);
+		}
+		&[data-icon="icon6"]{
+			left: 50%;
+			bottom: 19.7%;
+			margin-left: -50px;
+			transform: translateX(-50%);
+			@include size(69px, 95px);
+			@include media-breakpoint-up(lg){
+				margin-left: -120px;
+			}
+		}
+	}
+}
+/*------------------------------------------------------------------
+14. caption / .caption
+-------------------------------------------------------------------*/
+.caption{
+	p{
+		margin-bottom: 26px;
+	}
+	.btn-outline-primary{
+		min-width: 160px;
+		font-size: 12px;
+	}
+}
+/*------------------------------------------------------------------
+15. playBtn / .playBtn
+-------------------------------------------------------------------*/
+.playBtn{
+	@include size(48px);
+	background-color: $primary;
+	border: 1px solid $primary;
+	transition: background-color 0.35s ease, border 0.35s ease;
+	@include media-breakpoint-up(sm){
+		@include size(55px);
+	}
+	&:before{
+		animation-duration: 1s;
+		border: 6px solid $primary;
+		bottom: 0;
+		content: "";
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: -1;
+		border-radius: 50%;
+		animation-name: hvr-ripple-out;
+		-webkit-animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+	.playIcn{
+		@include size(0);
+		margin-left: 3px;
+		border-width: 6px 0px 6px 10px;
+		border-style: solid;
+		border-color: transparent transparent transparent $white;
+		transition:  border-color 0.35s ease;
+	}
+	&:hover{
+		background-color: $white;
+		.playIcn{
+			border-color: transparent transparent transparent $primary;
+		}
+	}
+}
+@-webkit-keyframes hvr-ripple-out {
+	100% {
+		top: -10px;
+		right: -10px;
+		bottom: -10px;
+		left: -10px;
+		opacity: 0;
+	}
+}
+@keyframes hvr-ripple-out {
+	100% {
+		top: -10px;
+		right: -10px;
+		bottom: -10px;
+		left: -10px;
+		opacity: 0;
+	}
+}
+/*------------------------------------------------------------------
+16. videoWatchHolder / .videoWatchHolder
+-------------------------------------------------------------------*/
+.videoWatchHolder{
+	font-size: 12px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	p{
+		margin-bottom: 0;
+	}
+}
+/*------------------------------------------------------------------
+17. btn-outline-primary / .btn-outline-primary
+-------------------------------------------------------------------*/
+.btn-outline-primary{
+	border-style: dashed;
+	background-color: $white;
+	line-height: 14px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	min-width: 150px;
+	font-size: 11px;
+	&:active,
+	&:focus{
+		outline: none;
+	}
+}
+/*------------------------------------------------------------------
+18. btn / .btn
+-------------------------------------------------------------------*/
+.btn{
+	&:active,
+	&:focus{
+		box-shadow: none;
+	}
+}
+/*------------------------------------------------------------------
+19. abtBlock / .abtBlock
+-------------------------------------------------------------------*/
+.abtBlock{
+	.imgHolder{
+		max-width: 400px;
+		@include media-breakpoint-up(md){
+			max-width: 470px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+20. header / .header
+-------------------------------------------------------------------*/
+.header{
+	.h3{
+		line-height: 35px;
+		@include media-breakpoint-up(sm){
+			line-height: 38px;
+		}
+		@include media-breakpoint-up(lg){
+			line-height: 45px;
+		}
+		@include media-breakpoint-up(xl){
+			line-height: 50px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+21. header / .header
+-------------------------------------------------------------------*/
+.abtDesBlock{
+	font-size: 14px;
+	line-height: 22px;
+	@include media-breakpoint-up(lg){
+		font-size: 15px;
+		line-height: 24px;
+	}
+	@include media-breakpoint-up(xl){
+		font-size: 16px;
+		line-height: 28px;
+	}
+	.h5{
+		@include media-breakpoint-between(md , lg){
+			font-size: 18px;
+		}
+	}
+	.h2{
+		@include media-breakpoint-only(md){
+			font-size: 30px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+22. serviceBlock / .serviceBlock
+-------------------------------------------------------------------*/
+.serviceBlock{
+	z-index: 1;
+}
+/*------------------------------------------------------------------
+23. serviceDesList / .serviceDesList
+-------------------------------------------------------------------*/
+.serviceDesList{
+	@include media-breakpoint-up(md){
+		[class*="col"]:nth-child(odd){
+			margin-top: 40px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+24. serviceDesList / .serviceDesList
+-------------------------------------------------------------------*/
+.serviceDesBlock{
+	.icn{
+		height: 80px;
+		@include media-breakpoint-only(md){
+			height: 67px;
+		}
+		&:before{
+			font-size: 70px;
+			line-height: 72px;
+			margin-left: 0;
+			@include media-breakpoint-up(md){
+				font-size: 62px;
+				line-height: 65px;
+			}
+			@include media-breakpoint-up(lg){
+				font-size: 70px;
+				line-height: 72px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 82px;
+				line-height: 82px;
+			}
+		}
+	}
+	&:hover{
+		.label{
+			opacity: 1;
+			visibility: visible;
+		}
+		&:after{
+			transform: scale(1);
+		}
+	}
+	.h5{
+		@include media-breakpoint-only(md){
+			font-size: 16px;
+		}
+		a{ color: $gray-800; }
+	}
+	&.active{
+		.label{
+			opacity: 1;
+			visibility: visible;
+		}
+		&:after{
+			transform: scale(1);
+		}
+	}
+	&:after{
+		position: absolute;
+		content: "";
+		right: 0;
+		bottom: 0;
+		@include size(100%, 4px);
+		transform: scale(0);
+		transition: transform 0.35s ease;
+	}
+	&[data-icnClr="primary"]{
+		.icn{
+			color: $primary;
+		}
+		&:after{
+			background-color: $primary;
+		}
+	}
+	&[data-icnClr="info"]{
+		.icn{
+			color: $info;
+		}
+
+		&:after{
+			background-color: $cyan;
+		}
+	}
+	&[data-icnClr="purple"]{
+		.icn{
+			color: $purple;
+		}
+		&:after{
+			background-color: $purple;
+		}
+	}
+	&[data-icnClr="orange"]{
+		.icn{
+			color: $orange;
+		}
+		&:after{
+			background-color: $orange;
+		}
+	}
+	.label{
+		top: 15px;
+		right: 15px;
+		font-size: 12px;
+		line-height: 14px;
+		padding: 3px 7px;
+		opacity: 0;
+		cursor: default;
+		visibility: hidden;
+		transition: opacity 0.35s ease , visibility 0.35s ease;
+		@include media-breakpoint-only(md){
+			top: 12px;
+			right: 12px;
+			font-size: 10px;
+			line-height: 12px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+25. videoHolder / .videoHolder
+-------------------------------------------------------------------*/
+.videoHolder{
+	max-width: 100%;
+}
+/*------------------------------------------------------------------
+26. playBtnWrap / .playBtnWrap
+-------------------------------------------------------------------*/
+.playBtnWrap{
+	@include size(60px);
+	@include media-breakpoint-up(sm){
+		@include size(70px);
+	}
+	@include media-breakpoint-up(md){
+		@include size(80px);
+	}
+	&:before,
+	&:after{
+		position: absolute;
+		content: "";
+		border:1px solid $white;
+		border-radius: 100%;
+		animation: myOrbit 4s infinite;
+	}
+	&:before{
+		top: -20px;
+		right: -20px;
+		@include size(100px);
+		@include media-breakpoint-up(sm){
+			@include size(110px);
+		}
+		@include media-breakpoint-up(md){
+			@include size(120px);
+		}
+	}
+	&:after{
+		top: -10px;
+		right: -10px;
+		@include size(80px);
+		@include media-breakpoint-up(sm){
+			@include size(90px);
+		}
+		@include media-breakpoint-up(md){
+			@include size(100px);
+		}
+	}
+}
+@keyframes myOrbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+/*------------------------------------------------------------------
+27. playBtnHolder / .playBtnHolder
+-------------------------------------------------------------------*/
+.playBtnHolder{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	.playIcn{
+		@include size(0);
+		border-style: solid;
+		border-width: 8px 0 8px 15px;
+		border-color: transparent transparent transparent $gray-800;
+	}
+	.txt{
+		font-size: 	13px;
+		line-height: 20px;
+		@include media-breakpoint-up(md){
+			font-size: 	15px;
+			line-height: 24px;
+		}
+		@include media-breakpoint-only(xs){
+			text-shadow: 0px 0px 4px rgba($black,0.5);
+		}
+	}
+	.arrowImg{
+		max-width: 17px;
+		right: -31px;
+		bottom: 13px;
+	}
+}
+/*------------------------------------------------------------------
+28. click / .click
+-------------------------------------------------------------------*/
+.click{
+	color: $primary;
+	text-decoration: underline;
+	line-height: 18px;
+}
+/*------------------------------------------------------------------
+29. svgBg / .svgBg
+-------------------------------------------------------------------*/
+.svgBg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include size(100%);
+	z-index: -1;
+}
+/*------------------------------------------------------------------
+30. priceColumeBLock / .priceColumeBLock
+-------------------------------------------------------------------*/
+.priceColumeBLock{
+	border:1px dashed rgba($primary, 0.3);
+	background-color: rgba($primary, 0.05);
+	&[data-colorBdr="info"]{
+		border-color: rgba($info , 0.3);
+		background-color: rgba($info, 0.05);
+		.priceVocherWrap{
+			color: $info;
+		}
+	}
+	&[data-colorBdr="purple"]{
+		border-color: rgba($purple , 0.3);
+		background-color: rgba($purple, 0.05);
+		.priceVocherWrap{
+			color: $purple;
+		}
+		.btn{
+			background-color: $purple;
+			border-color: $purple;
+			&:hover{
+				background-color: $gray-1000;
+				border-color: $gray-1000;
+			}
+		}
+	}
+	.imgHolder{
+		max-width: 212px;
+		max-height: 216px;
+		@include media-breakpoint-up(sm){
+			max-width: 178px;
+			max-height: 182px;
+		}
+		@include media-breakpoint-up(lg){
+			max-width: 198px;
+			max-height: 202px;
+		}
+		@include media-breakpoint-up(xl){
+			max-width: 264px;
+			max-height: 270px;
+		}
+	}
+	.btn{
+		min-width: 170px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		margin-bottom: 11px;
+		color: $white;
+		@include media-breakpoint-up(md){
+			min-width: 192px;
+		}
+	}
+	.h4{
+		@include media-breakpoint-only(sm){
+			font-size: 25px;
+		}
+		@include media-breakpoint-only(lg){
+			font-size: 26px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+31. priceVocherWrap / .priceVocherWrap
+-------------------------------------------------------------------*/
+.priceVocherWrap{
+	font-size: 60px;
+	line-height: 62px;
+	color: $primary;
+}
+/*------------------------------------------------------------------
+32. currency / .currency
+-------------------------------------------------------------------*/
+.currency{
+	bottom: -32px;
+	line-height: 24px;
+}
+/*------------------------------------------------------------------
+33. pricePrsont / .pricePrsont
+-------------------------------------------------------------------*/
+.pricePrsont,
+.currency{
+	font-size: 22px;
+	line-height: 24px;
+}
+.pricePrsont{
+	top: -7px;
+}
+/*------------------------------------------------------------------
+34. priceDesList / .priceDesList
+-------------------------------------------------------------------*/
+.priceDesList{
+	li{
+		margin-bottom: 15px;
+		@include media-breakpoint-up(xl){
+			margin-bottom: 18px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+35. testimonialBlock / .testimonialBlock
+-------------------------------------------------------------------*/
+.testimonialBlock{
+	min-height: 420px;
+	@include media-breakpoint-up(sm){
+		min-height: 480px;
+	}
+	@include media-breakpoint-up(lg){
+		min-height: 530px;
+	}
+	@include media-breakpoint-up(lg){
+		min-height: 600px;
+	}
+	@include media-breakpoint-up(xl){
+		min-height: 713px;
+	}
+}
+/*------------------------------------------------------------------
+36. testimonial / .testimonial
+-------------------------------------------------------------------*/
+.testimonial{
+	color: $gray-800;
+	.imgHolder{
+		@include size (100%);
+	}
+	q{
+		font-size: 21px;
+		line-height: 32px;
+		margin-bottom: 12px;
+		@include media-breakpoint-up(sm){
+			font-size: 24px;
+			line-height: 38px;
+			margin-bottom: 15px;
+		}
+		@include media-breakpoint-up(md){
+			font-size: 26px;
+			line-height: 45px;
+		}
+		@include media-breakpoint-up(xl){
+			font-size: 30px;
+			line-height: 52px;
+		}
+	}
+	.author{
+		font-style: normal;
+		color: $gray-400;
+	}
+	.quoteImg{
+		@include size(32px);
+		top: 0;
+		right: 0;
+		padding: 10px;
+		@include media-breakpoint-up(md){
+			@include size(40px);
+			padding: 12px;
+		}
+	}
+	.avatar{
+		@include size(100px);
+		@include media-breakpoint-up(md){
+			@include size(110px);
+		}
+		@include media-breakpoint-up(xl){
+			@include size(120px);
+		}
+	}
+}
+/*------------------------------------------------------------------
+37. avatarGroup / .avatarGroup
+-------------------------------------------------------------------*/
+.avatarGroup{
+	.imgWrap{
+		@include size(60px);
+		@include media-breakpoint-up(lg){
+			@include size(65px);
+		}
+		@include media-breakpoint-up(lg){
+			@include size(71px);
+		}
+		&[data-img="imgI"]{
+			top: 41.5%;
+			left: 6.3%;
+			@include size(100px);
+			transform: translateY(-58.5%);
+			@include media-breakpoint-up(xl){
+				left: 9.3%;
+			}
+		}
+		&[data-img="imgII"]{
+			top: 33%;
+			right: 11%;
+			transform: translateY(-67%);
+			@include media-breakpoint-up(xl){
+				right: 13.7%;
+			}
+		}
+		&[data-img="imgIV"]{
+			top: 56.7%;
+			right: -39px;
+			@include size(70px);
+			transform: translateY(-44.3%);
+			@include media-breakpoint-up(md){
+				right: 4.5%;
+				@include size(80px);
+			}
+			@include media-breakpoint-up(lg){
+				@include size(100px);
+			}
+			@include media-breakpoint-up(xl){
+				right: 6.3%;
+			}
+		}
+		&[data-img="imgIII"]{
+			bottom: 19.6%;
+			right: 12.6%;
+			@include size(100px);
+			transform: translateY(80.4%);
+			@include media-breakpoint-up(xl){
+				right: 14.5%;
+			}
+		}
+		&[data-img="imgV"]{
+			bottom: 30.5%;
+			left: -22px;
+			transform: translateY(59.5%);
+			@include media-breakpoint-up(md){
+				left: 4.8%;
+			}
+			@include media-breakpoint-up(xl){
+				left: 6.8%;
+			}
+		}
+		&[data-img="imgVI"]{
+			bottom: 23%;
+			left: 17%;
+			transform: translateY(77%);
+			@include media-breakpoint-up(xl){
+				left: 20%;
+			}
+		}
+	}
+}
+/*------------------------------------------------------------------
+38. contactBlock / .contactBlock
+-------------------------------------------------------------------*/
+.contactBlock{
+	min-height: 500px;
+	@include media-breakpoint-up(sm){
+		min-height: 550px;
+	}
+	@include media-breakpoint-up(lg){
+		min-height: 660px;
+	}
+	@include media-breakpoint-up(xl){
+		min-height: 753px;
+	}
+	p{
+		margin-bottom: 39px;
+	}
+	.btnHolder{
+		.btn{
+			min-width: 170px;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			font-size: 12px;
+			@include media-breakpoint-up(sm){
+				min-width: 192px;
+				padding-top: 16px;
+				padding-bottom: 16px;
+				font-size: 14px;
+			}
+		}
+	}
+	.bgImg{
+		width: 800px;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0;
+		z-index: 0;
+		@include media-breakpoint-up(lg){
+			width: 900px;
+		}
+		@include media-breakpoint-up(xl){
+			width: 1088px;
+		}
+	}
+	.header{
+		z-index: 1;
+	}
+	.h1{
+		@include media-breakpoint-only(xs){
+			font-size: 30px;
+		}
+		@include media-breakpoint-only(sm){
+			font-size: 36px;
+		}
+	}
+}
+.error,
+.success{
+	margin-bottom: 20px;
+	border-radius: $border-radius;
+	padding: 12px 25px;
+	font-size: 14px;
+	line-height: 20px;
+	color: $white;
+}
+#msgSubmit{
+	display: none;
+	&.error{
+		display: block;
+	}
+	&.success{
+		display: block;
+	}
+}
+.success {
+	background-color: $info;
+}
+.error{
+	background-color: $primary;
+}
+/*------------------------------------------------------------------
+39. srvcePromeBlock / .srvcePromeBlock
+-------------------------------------------------------------------*/
+.srvcePromeBlock{
+	z-index: 1;
+}
+/*------------------------------------------------------------------
+40. contactPopup / .contactPopup
+-------------------------------------------------------------------*/
+.contactPopup{
+	max-width: 460px;
+	.h6{
+		font-size: 24px;
+		line-height: 28px;
+	}
+	.close{
+		top: 0;
+		right: 0;
+		font-size: 22px;
+		line-height: 22px;
+		padding: 16px 18px;
+		opacity: 1;
+		span{
+			transition: color 0.35s ease;
+		}
+	}
+}
+/*------------------------------------------------------------------
+41. contactForm / .contactForm
+-------------------------------------------------------------------*/
+.contactForm{
+	p{
+		margin-bottom: 32px;
+		@include media-breakpoint-up(sm){
+			margin-bottom: 36px;
+		}
+		@include media-breakpoint-up(md){
+			margin-bottom: 54px;	
+		}
+	}
+	.form-control{
+		margin-bottom: 20px;
+	}
+	textarea{
+		&.form-control{
+			height: 170px;
+			resize: none;
+		}
+	}
+}
+/*------------------------------------------------------------------
+42. thankyouBlock / .thankyouBlock
+-------------------------------------------------------------------*/
+.thankyouBlock{
+	background-color: rgba($primary, 0.05);
+}
+/*------------------------------------------------------------------
+43. iconGroupImgII / .iconGroupImgII
+-------------------------------------------------------------------*/
+.iconGroupImgII{
+	.icnImg{
+		&[data-icon="iconImgI"]{
+			top: -26px;
+			left: 50%;
+			margin-left: -652px;
+			display: none;
+			transform: translateX(-50%);
+			@include size(102px, 122px);
+			animation: move 4s infinite;
+		}
+		&[data-icon="iconImgII"]{
+			left: 50%;
+			top: -65px;
+			margin-left: -80px;
+			@include size(24px);
+			transform: translateX(-50%);
+			animation: move 4s infinite;
+		}
+		&[data-icon="iconImgIII"]{
+			left: 50%;
+			top: -101px;
+			margin-left: 750px;
+			@include size(78px, 79px);
+			transform: translateX(-50%);
+			animation: move 4s infinite;
+		}
+		&[data-icon="iconImgIV"]{
+			left: 50%;
+			top: 38.3%;
+			margin-left: -753px;
+			@include size(62px, 61px);
+			transform: translate(-50%, -63%);
+			animation: move 4s infinite;
+		}
+		&[data-icon="iconImgV"]{
+			top: 28%;
+			left: 50%;
+			margin-left: 659px;
+			@include size(31px);			
+			transform: translate(-50%, -72%);
+			animation: move 4s infinite;
+		}
+		&[data-icon="iconImgVI"]{
+			left: 50%;
+			bottom: 146px;
+			margin-left: -585px;
+			transform: translateX(-50%);
+			@include size(79px, 95px);
+			animation: move 4s infinite;
+		}
+	}
+}
+@keyframes move {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+/*------------------------------------------------------------------
+44. ovelGradientII / .ovelGradientII
+-------------------------------------------------------------------*/
+.ovelGradientII{
+	top: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-left: -737px;
+}
+/*------------------------------------------------------------------
+45. thankyouBlock / .thankyouBlock
+-------------------------------------------------------------------*/
+.thankyouBlock{
+	.circleGradient{
+		&[data-circle="circleI"]{
+			top: 41.6%;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-left: 840px;
+		}
+		&[data-circle="circleII"]{
+			top: 410px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-left: 657px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+46. back-top / #back-top
+-------------------------------------------------------------------*/
+#back-top{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	font-size: 18px;
+	line-height: 20px;
+    cursor: pointer;
+    float: right;
+    @include size(50px, 50px);
+    padding: 14px 0;
+    z-index: 9;
+    opacity: 0;
+    background: $red;
+    color: $white;
+    visibility: hidden;
+    transition: all 0.6s ease 0s;
+    &.active{
+    	opacity: 1;
+    	visibility: visible;
+    }
+}
+/*------------------------------------------------------------------
+47. loader-holder / .loader-holder
+-------------------------------------------------------------------*/
+.loader-holder{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  position: fixed;
+  background-color: rgba($white, 0.9);
+  .block {
+	  top: 50%;
+	  left: 50%;
+	  position: absolute;
+	  transform: translate(-50%, -50%);
+	}
+}

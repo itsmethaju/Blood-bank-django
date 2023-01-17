@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+{% if donor %}
+<h3 class="text-center">All Donor</h3>
+<table class="table table-sm table-bordered">
+  <tr class="table-secondary">
+    <th>Name</th>
+    <th>Blood Group</th>
+    <th>State | City</th>
+    <th>Status</th>
+    <th>Details</th>
+  </tr>
+  {% for i in donor %}
+    {% if i.ready_to_donate %}
+      <tr class="table-success">
+        <td>{{i.donor.get_full_name}}</td>
+        <td>{{i.blood_group}}</td>
+        <td>{{i.state}} | {{i.city}}</td>
+        <td>Ready To Donate</td>
+        <td><a href="/donors_details/{{i.id}}/" class="btn btn-sm btn-outline-secondary">View</a></td>
+      </tr>
+    {% else %}
+      <tr class="table-danger">
+        <td>{{i.donor.get_full_name}}</td>
+        <td>{{i.blood_group}}</td>
+        <td>{{i.last_donate}}</td>
+        <td>Not Ready To Donate</td>
+        <td><a href="" class="btn btn-sm btn-outline-secondary">View</a></td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+</table>
+{% else %}
+<h2>No Donor Available</h2>
+{% endif %}
+</div>
+{% endblock %}

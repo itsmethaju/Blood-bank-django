@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<br>
+<br>
+<br>
+<section class="priceBlock text-center pt-9 pb-12 pb-sm-15 pb-md-20 pb-lg-25 pb-xl-32">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                <header class="header mb-8 mb-md-10 mb-xl-13">
+                    <h4 class="px-lg-20 px-xl-10">
+                        <strong class="h6 mb-2 mb-sm-3 d-block text-primary font-weight-normal">Blood available States</strong>	
+                        <strong class="h3 d-block mb-4 mb-xl-5"> State</strong>
+                    </h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting has been the industry's standard dummy text ever since the 1500s.</p>
+                </header>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            {% for i in all_group %}
+            <div class="col-12 col-sm-3 col-lg-3">
+                <!-- priceColumeBLock of the page -->
+                <article class="priceColumeBLock px-3 py-4 p-md-4 pb-md-6 mb-8" data-colorBdr="primary">
+                    <span class="d-block imgHolder mx-auto mb-sm-5 mb-md-8 mb-xl-12">
+                        <a href="/city_list/{{i.id}}/"><img src="{{i.stateimage.url}}" class="img-fluid" alt="Brand Logo"></a>
+                    </span>
+                
+                    <h5 class="h4 text-capitalize mb-4">{{i.total}}</h5>
+                    
+                    <a href="/city_list/{{i.id}}/" class="btn btn-primary rounded-pill text-uppercase fwSemibold">View<span class="fas fa-arrow-right ml-2"></span></a>
+                </article>
+            </div>
+            {% endfor %}
+        
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}
